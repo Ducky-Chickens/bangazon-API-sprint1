@@ -1,0 +1,27 @@
+{
+  "name": "ducky-chickens-bangazon",
+  "version": "1.0.0",
+  "description": "Ducky Chicken's Bangazon API",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate faker": "node ./build-data",
+    "build tables": "node ./build-db"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ducky-Chickens/bangazon-API-sprint1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ducky-Chickens/bangazon-API-sprint1/issues"
+  },
+  "homepage": "https://github.com/Ducky-Chickens/bangazon-API-sprint1#readme",
+  "devDependencies": {
+    "faker": "^4.1.0"
+  },
+  "dependencies": {
+    "sqlite3": "^4.0.0"
+  }
+}

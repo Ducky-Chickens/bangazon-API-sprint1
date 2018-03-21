@@ -8,37 +8,37 @@
     {
       "program_name":"Logistics_Training",
       "start_date":"2018-2-20","end_date":"2018-10-9",
-      "max_attendies":20
+      "max_attendees":20
     },
     {
       "program_name":"Management_Training",
       "start_date":"2018-3-1","end_date":"2018-6-19",
-      "max_attendies":12
+      "max_attendees":12
     },
     {
       "program_name":"HR_Training",
       "start_date":"2018-5-11","end_date":"2018-10-15",
-      "max_attendies":23
+      "max_attendees":23
     },
     {
       "program_name":"Executive_Training",
       "start_date":"2018-7-9","end_date":"2019-2-11",
-      "max_attendies":8
+      "max_attendees":8
     },
     {
       "program_name":"Finance_Training",
       "start_date":"2018-3-22","end_date":"2018-9-14",
-      "max_attendies":40
+      "max_attendees":40
     },
     {
       "program_name":"Designer_Training",
       "start_date":"2018-1-4","end_date":"2018-7-10",
-      "max_attendies":25
+      "max_attendees":25
     },
     {
       "program_name":"Consultant_Training",
       "start_date":"2018-4-1","end_date":"2018-10-4",
-      "max_attendies":50
+      "max_attendees":50
     }
   ]
 }

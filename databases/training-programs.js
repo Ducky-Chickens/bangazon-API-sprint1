@@ -13,16 +13,16 @@ module.exports.buildProgramsTable = () => {
         title TEXT,
         start_date TEXT,
         end_date TEXT,
-        max_attendies INTEGER)`
+        max_attendees INTEGER)`
     );
   
-    trainingPrograms.forEach(({ program_name, start_date, end_date, max_attendies }) => {
+    trainingPrograms.forEach(({ program_name, start_date, end_date, max_attendees }) => {
       db.run(`INSERT INTO training_programs VALUES (
             ${null},
             "${program_name}",
             "${start_date}",
             "${end_date}",
-            ${max_attendies})`
+            ${max_attendees})`
       );
     })
   });

@@ -9,14 +9,14 @@ module.exports.generatePrograms = () => {
     let programName = faker.name.jobType();
     let startDate = faker.date.recent().toLocaleDateString();
     let endDate = faker.date.future().toLocaleDateString();
-    let maxAttendies = faker.random.number();
+    let maxAttendees = faker.random.number();
 
     programs.push({
       "program_name": programName,
       "start_date": startDate,
       "end_date": endDate,
-      "max_attendies": maxAttendies,
+      "max_attendees": maxAttendees,
     })
   }
-  return programs
+  return programs;
 }

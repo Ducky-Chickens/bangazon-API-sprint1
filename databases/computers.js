@@ -3,7 +3,7 @@ const db = new sqlite3.Database('bangazon.sqlite');
 const { readFileSync } = require('fs');
 const { computers } = JSON.parse(readFileSync("./data/computers.json"));
 
-module.exports.buildComputerTable = () => 
+module.exports.buildComputerTable = () => {
   db.serialize(() => {
     db.run(`DROP TABLE IF EXISTS computers`);
     db.run(
@@ -18,3 +18,4 @@ module.exports.buildComputerTable = () =>
       });
     })
   });
+}

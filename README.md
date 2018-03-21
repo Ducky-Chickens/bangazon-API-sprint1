@@ -1,6 +1,6 @@
 # bangazon-API-sprint1
 
--[x] Basic Project Setup
+Basic Project Setup
 
 ```
 // To run the program, first install dependencies

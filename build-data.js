@@ -6,6 +6,7 @@ const { generatePrograms } = require('./generators/training-program-faker');
 const { generateDepartments } = require('./generators/departments-faker');
 const { generateComputers } = require('./generators/computer-faker');
 const { generateCustomers } = require('./generators/customer-faker');
+const { generateProducts } = require('./generators/product-faker');
 
 // Create json files
 let programs = generatePrograms();
@@ -24,3 +25,7 @@ compStream.write(JSON.stringify(computers));
 let customers = generateCustomers();
 let custStream = createWriteStream('./data/customers.json');
 custStream.write(JSON.stringify(customers));
+
+let products = generateProducts();
+let prodStream = createWriteStream('./data/products.json');
+prodStream.write(JSON.stringify(products));

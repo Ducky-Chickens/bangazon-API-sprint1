@@ -4,7 +4,7 @@ const db = new sqlite3.Database("bangazon.sqlite");
 const { readFileSync } = require("fs");
 const { trainingPrograms } = JSON.parse(readFileSync('./data/training-programs.json'));
 
-module.exports = () => {
+module.exports.buildProgramsTable = () => {
   db.serialize(function () {
     db.run(`DROP TABLE IF EXISTS training_programs`);
     db.run(

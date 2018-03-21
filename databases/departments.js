@@ -1,9 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('bangazon.sqlite');
-const {
-	readFileSync
-} = require('fs');
-const deptData = JSON.parse(readFileSync('./data/departments.json'));
+const {readFileSync} = require('fs');
+const {departments} = JSON.parse(readFileSync('./data/departments.json'));
 
 module.exports.buildDepartmentTable = () => {
 
@@ -17,7 +15,7 @@ module.exports.buildDepartmentTable = () => {
 			budget INTEGER 
 		)`,
 			() => {
-				deptData.forEach(({
+				departments.forEach(({
 					dept_name,
 					supervisor_id,
 					budget

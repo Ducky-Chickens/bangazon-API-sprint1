@@ -1,1 +1,17 @@
-[{"dept_name":"HR","supervisor_id":2,"budget":60780},{"dept_name":"logistics","supervisor_id":5,"budget":17210},{"dept_name":"customer_service","supervisor_id":7,"budget":64596},{"dept_name":"IT","supervisor_id":9,"budget":99787},{"dept_name":"finance","supervisor_id":11,"budget":34334}]
+{"departments":[
+    {"dept_name":"HR",
+    "supervisor_id":2,
+    "budget":60780},
+    {"dept_name":"Logistics",
+    "supervisor_id":5,
+    "budget":17210},
+    {"dept_name":"Customer Service",
+    "supervisor_id":7,
+    "budget":64596},
+    {"dept_name":"IT",
+    "supervisor_id":9,
+    "budget":99787},
+    {"dept_name":"Finance",
+    "supervisor_id":11,
+    "budget":34334}
+]}

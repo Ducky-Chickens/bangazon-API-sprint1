@@ -1,0 +1,24 @@
+{
+  "computers": [
+    {"purchaseDate":"2018-1-31"},
+    {"purchaseDate":"2018-2-6"},
+    {"purchaseDate":"2018-2-17"},
+    {"purchaseDate":"2017-12-7"},
+    {"purchaseDate":"2017-11-4"},
+    {"purchaseDate":"2017-5-19"},
+    {"purchaseDate":"2018-3-3"},
+    {"purchaseDate":"2018-2-23"},
+    {"purchaseDate":"2017-7-2"},
+    {"purchaseDate":"2018-2-15"},
+    {"purchaseDate":"2017-8-10"},
+    {"purchaseDate":"2017-5-30"},
+    {"purchaseDate":"2017-11-14"},
+    {"purchaseDate":"2017-8-17"},
+    {"purchaseDate":"2018-2-7"},
+    {"purchaseDate":"2018-2-6"},
+    {"purchaseDate":"2017-4-5"},
+    {"purchaseDate":"2017-8-31"},
+    {"purchaseDate":"2017-12-25"},
+    {"purchaseDate":"2017-12-2"}
+  ]
+}

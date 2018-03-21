@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const routes = require('./routes/');
+require('dotenv').config();
 
 app.use("/api/", routes);
 
@@ -19,7 +20,7 @@ app.use( (err, req, res, next) => {
   })
 });
 
-const port = 8080;
+const port = process.env.PORT || 6666;
 
 app.listen(port, () => {
   console.log(`listening to port ${port}`);

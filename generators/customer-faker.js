@@ -1,8 +1,9 @@
 "use strict";
 
 const faker = require('faker');
+const { createWriteStream } = require('fs');
 
-module.exports.generateCustomers = () => {
+const generateCustomers = () => {
   let customers = [];
   for (let i = 0; i < 20; i++) {
     let first_name = faker.name.firstName();
@@ -18,3 +19,6 @@ module.exports.generateCustomers = () => {
     return { customers };
 };
 
+let customers = generateCustomers();
+let custStream = createWriteStream('./data/customers.json');
+custStream.write(JSON.stringify(customers));

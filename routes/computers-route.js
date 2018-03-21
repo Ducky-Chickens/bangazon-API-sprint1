@@ -3,6 +3,9 @@ const compRouter = Router();
 const { getComputers } = require('../controllers/computers-ctrl');
 
 compRouter.get("/computers", getComputers);
-// dirRouter.get('/computers/:compId', getOneComputer);
+// compRouter.get('/computers/:compId', getOneComputer);
+
+// THE FUTURE
+// compRouter.post('/computers', postNewComputer);
 
 module.exports = compRouter;

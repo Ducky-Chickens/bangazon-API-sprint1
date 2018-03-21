@@ -1,8 +1,9 @@
 // generate training programs
 'use strict'; 
 const faker = require('faker');
+const { createWriteStream } = require('fs');
 
-module.exports.generatePrograms = () => {
+const generatePrograms = () => {
   let programs = [];
 
   for(let i=0; i<8; i++){
@@ -20,3 +21,7 @@ module.exports.generatePrograms = () => {
   }
   return programs;
 }
+
+let programs = generatePrograms();
+let programStream = createWriteStream(`../data/training-programs.json`);
+programStream.write(JSON.stringify(programs));

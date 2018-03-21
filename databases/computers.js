@@ -5,7 +5,7 @@ const { computers } = JSON.parse(readFileSync("./data/computers.json"));
 
 module.exports.buildComputerTable = () => 
   db.serialize(() => {
-    // db.run(`DROP TABLE IF EXISTS computers`);
+    db.run(`DROP TABLE IF EXISTS computers`);
     db.run(
       `CREATE TABLE IF NOT EXISTS computers (
         computer_id INTEGER PRIMARY KEY,

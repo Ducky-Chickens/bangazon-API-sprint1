@@ -4,8 +4,8 @@
   "description": "Ducky Chicken's Bangazon API",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate faker": "node ./build-data",
-    "build tables": "node ./build-db"
+    "generate-faker": "node ./build-data",
+    "build-tables": "node ./build-db"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "faker": "^4.1.0"
   },
   "dependencies": {
-    "sqlite3": "^4.0.0"
+    "sqlite": "^2.9.1",
+    "sqlite3": "^3.1.9"
   }
 }

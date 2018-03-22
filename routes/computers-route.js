@@ -3,6 +3,7 @@ const compRouter = Router();
 const { getComputers } = require('../controllers/computers-ctrl');
 
 compRouter.get("/computers", getComputers);
+
 // compRouter.get('/computers/:compId', getOneComputer);
 
 // THE FUTURE

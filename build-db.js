@@ -10,7 +10,7 @@ const { buildProductTable } = require('./databases/products')
 const { buildPaymentTypesTable } = require('./databases/payment-types');
 const { buildOrderTable } = require('./databases/orders');
 const { buildOrderProductTable } = require('./databases/order_product');
-
+const { buildEmpCompTable } = require('./databases/employee_computer');
 
 setTimeout(buildProgramsTable, 0);
 setTimeout(buildDepartmentTable, 100);
@@ -22,3 +22,4 @@ setTimeout(buildEmployeeTable, 600);
 setTimeout(buildPaymentTypesTable, 700);
 setTimeout(buildOrderTable, 800);
 setTimeout(buildOrderProductTable, 900);
+setTimeout(buildEmpCompTable, 1000);

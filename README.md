@@ -11,6 +11,10 @@ npm i
 
 npm build tables
 
+// Run a local server to access the data in browser
+
+http-server
+
 ```
 
 # Employees ERD

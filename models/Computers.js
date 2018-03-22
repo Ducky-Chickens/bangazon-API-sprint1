@@ -25,7 +25,7 @@ module.exports.addSingleComputer = ({purchaseDate}) => {
   return new Promise ((resolve, reject) => {
     db.run(`INSERT INTO computers
     VALUES (null, "${purchaseDate}", null)`, 
-    (err, computer) => {
+    function(err, computer) {
       if (err) return reject(err);
       resolve({ id : this.lastID });
     });

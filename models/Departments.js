@@ -20,3 +20,15 @@ module.exports.getOneDepartment = (id) => {
     });
   });
 };
+
+module.exports.addSingleDepartment = ({dept_name, supervisor_id, budget}) => {
+  return new Promise ((resolve, reject) => {
+    console.log(dept_name, supervisor_id, budget);
+    db.run(`INSERT INTO departments
+    VALUES (null, "${dept_name}", ${supervisor_id}, ${budget})`,
+  function(err, dept) {
+    if (err) return reject(err);
+    resolve ({ id : this.lastID });
+  });
+  });
+};

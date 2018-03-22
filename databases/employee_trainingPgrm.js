@@ -4,7 +4,6 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('bangazon.sqlite');
 const {readFileSync} = require('fs');
 const { emp_training } = require("../data/emp_training.json");
-// PRIMARY KEY(employee_id, program_id),
 
 module.exports.buildEmployee_TrainingPgrmTable = () => {
   db.serialize(function() {

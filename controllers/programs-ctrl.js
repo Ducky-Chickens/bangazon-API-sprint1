@@ -27,7 +27,7 @@ module.exports.getProgram = (req, res, next) => {
 
 module.exports.addProgram = (req, res, next) => {
   //pass in req.body.('json object') ---> test on postman
-  addNewProgram(req.body.program)
+  addNewProgram(req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);
@@ -42,7 +42,7 @@ module.exports.addProgram = (req, res, next) => {
 
 module.exports.editProgramByDate = (req, res, next) => {
   // pass in req params id AND req body object ---> postman
-  editProgram(req.params.programId, req.body.program)
+  editProgram(req.params.programId, req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);

@@ -1,4 +1,4 @@
-const { getAllComps, getSingleComputer, addSingleComputer } = require('../models/Computers');
+const { getAllComps, getSingleComputer, addSingleComputer, editComputer } = require('../models/Computers');
 
 module.exports.getComputers = (req, res, next) => {
   getAllComps()
@@ -27,3 +27,16 @@ module.exports.postNewComputer = (req, res, next) => {
     next(err);
   })
 };
+
+module.exports.editComputerByColumn = (req, res, next) => {
+  editComputer(req.params.compId, req.body)
+  .then(data => {
+    if(data){
+      res.status(200).json(data);
+    } else {
+      let error = new Error('Failed to edit Computer');
+      error.status = 500;
+      next(error);
+    }
+  })
+}

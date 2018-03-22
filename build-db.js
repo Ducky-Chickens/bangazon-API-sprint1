@@ -16,6 +16,6 @@ setTimeout(createCustomerDatabase, 100);
 setTimeout(buildComputerTable, 150);
 setTimeout(buildProductTypesTable, 200);
 setTimeout(buildProductTable, 250);
-setTimeout(buildEmployeeTable, 300);
-setTimeout(buildPaymentTypesTable, 350);
+setTimeout(buildEmployeeTable, 350);
+setTimeout(buildPaymentTypesTable, 400);
 

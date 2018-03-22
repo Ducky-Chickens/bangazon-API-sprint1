@@ -5,19 +5,15 @@ const faker = require('faker');
 const { createWriteStream } = require('fs');
 
 const generateDepartments = () => {
-	let departments = [];
+  let departments = [];
 
-	for (let i = 0; i < 5; i++) {
-		let dept_name = faker.commerce.department();
-		let budget = faker.finance.amount()*100;
+  for (let i = 0; i < 5; i++) {
+    let budget = faker.finance.amount()*100;
 
-		departments.push({
-			dept_name,
-			budget
-		});
-	}
+    departments.push({ budget });
+  }
 
-	return departments;
+  return departments;
 }
 
 let departments = generateDepartments();

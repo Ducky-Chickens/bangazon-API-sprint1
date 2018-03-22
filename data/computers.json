@@ -1,1 +1,64 @@
-{"computers":[{"purchaseDate":"2017-7-24"},{"purchaseDate":"2017-5-20"},{"purchaseDate":"2018-2-4"},{"purchaseDate":"2017-10-24"},{"purchaseDate":"2017-3-25"},{"purchaseDate":"2017-8-12"},{"purchaseDate":"2017-11-29"},{"purchaseDate":"2017-11-8"},{"purchaseDate":"2017-11-27"},{"purchaseDate":"2017-10-29"},{"purchaseDate":"2017-8-25"},{"purchaseDate":"2018-1-1"},{"purchaseDate":"2017-9-9"},{"purchaseDate":"2017-5-1"},{"purchaseDate":"2017-12-25"},{"purchaseDate":"2017-6-27"},{"purchaseDate":"2017-12-30"},{"purchaseDate":"2018-1-3"},{"purchaseDate":"2017-3-27"},{"purchaseDate":"2017-9-20"}]}
+{
+  "computers": [
+    {
+      "purchaseDate": "2017-7-24"
+    },
+    {
+      "purchaseDate": "2017-5-20"
+    },
+    {
+      "purchaseDate": "2018-2-4"
+    },
+    {
+      "purchaseDate": "2017-10-24"
+    },
+    {
+      "purchaseDate": "2017-3-25"
+    },
+    {
+      "purchaseDate": "2017-8-12"
+    },
+    {
+      "purchaseDate": "2017-11-29"
+    },
+    {
+      "purchaseDate": "2017-11-8"
+    },
+    {
+      "purchaseDate": "2017-11-27"
+    },
+    {
+      "purchaseDate": "2017-10-29"
+    },
+    {
+      "purchaseDate": "2017-8-25"
+    },
+    {
+      "purchaseDate": "2018-1-1"
+    },
+    {
+      "purchaseDate": "2017-9-9"
+    },
+    {
+      "purchaseDate": "2017-5-1"
+    },
+    {
+      "purchaseDate": "2017-12-25"
+    },
+    {
+      "purchaseDate": "2017-6-27"
+    },
+    {
+      "purchaseDate": "2017-12-30"
+    },
+    {
+      "purchaseDate": "2018-1-3"
+    },
+    {
+      "purchaseDate": "2017-3-27"
+    },
+    {
+      "purchaseDate": "2017-9-20"
+    }
+  ]
+}

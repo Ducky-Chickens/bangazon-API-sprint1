@@ -21,13 +21,12 @@ module.exports.getSingleComputer = compID => {
   });
 };
 
-module.exports.addSingleComputer = ({purchaseDate, decomissionDate}) => {
+module.exports.addSingleComputer = ({purchaseDate}) => {
   return new Promise ((resolve, reject) => {
     db.run(`INSERT INTO computers
-    VALUES (null, "${purchaseDate}", "${decomissionDate}")`, 
+    VALUES (null, "${purchaseDate}", null)`, 
     (err, computer) => {
       if (err) return reject(err);
-      // computer.computer_id
       resolve({ id : this.lastID });
     });
   });

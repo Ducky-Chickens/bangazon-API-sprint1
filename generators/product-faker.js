@@ -20,3 +20,7 @@ module.exports.generateProducts = () => {
   }
   return { products };
 }
+
+let products = generateProducts();
+let prodStream = createWriteStream('./data/products.json');
+prodStream.write(JSON.stringify(products));

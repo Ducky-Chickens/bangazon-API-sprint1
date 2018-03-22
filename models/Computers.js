@@ -9,3 +9,14 @@ module.exports.getAllComps = () => {
     });
   });
 };
+
+module.exports.getSingleComputer = compID => {
+  return new Promise ((resolve, reject) => {
+    db.get(`SELECT * FROM computers
+    WHERE computer_id=${compID}`, (err, computer) => {
+      if (err) return reject(err);
+      // computer.computer_id
+      resolve(computer);
+    });
+  });
+};

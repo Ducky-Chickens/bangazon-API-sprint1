@@ -26,7 +26,7 @@ module.exports.getOneProgram = (id) => {
   })
 }
 
-//                           takes an entry object from req.body
+//takes an entry object from req.body
 module.exports.addNewProgram = ({ title, startDate, endDate, max }) => {
   return new Promise((resolve, reject) => {
     //insert all attributes of new entry  * use null for PK *
@@ -41,18 +41,16 @@ module.exports.addNewProgram = ({ title, startDate, endDate, max }) => {
   })
 }
 
-// **WORK IN PROGRESS       takes param id and req.body object
-module.exports.editProgram = (id, { startDate, endDate }) => {
+//takes param id and req.body object
+module.exports.editProgram = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
-    // update table set attribute where id = param id
-    db.run(`UPDATE training_programs SET start_date = "${startDate}"
-    WHERE program_id = ${id}
-    `, function (err) {
-      if (err) { return reject(err) };
-      // sql gives access to last changes
-      resolve({changes: this.changes});
-    });
+    // update table set column where id = param id
+      db.run(`UPDATE training_programs SET ${column} = "${value}"
+      WHERE program_id = ${id}
+      `, function (err) {
+        if (err) { return reject(err) };
+        resolve({changes: this.changes});
+      });
   })
 }
-
 

@@ -40,9 +40,9 @@ module.exports.addProgram = (req, res, next) => {
   })
 }
 
-module.exports.editProgramByDate = (req, res, next) => {
+module.exports.editProgramByColumn = (req, res, next) => {
   // pass in req params id AND req body object ---> postman
-  editProgram(req.params.programId, req.body.program)
+  editProgram(req.params.programId, req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);
@@ -53,5 +53,3 @@ module.exports.editProgramByDate = (req, res, next) => {
     }
   })
 }
-
-module

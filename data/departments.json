@@ -1,5 +1,6 @@
 {
-  "departments": [{
+  "departments": [
+    {
       "dept_name": "HR",
       "supervisor_id": 2,
       "budget": 60780

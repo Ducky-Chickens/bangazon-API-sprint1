@@ -1,4 +1,4 @@
-'use strict'; 
+'use strict';
 
 const { buildDepartmentTable } = require('./databases/departments');
 const { buildComputerTable } = require('./databases/computers');
@@ -9,6 +9,7 @@ const { buildProductTypesTable } = require('./databases/prod-types');
 const { buildProductTable } = require('./databases/products')
 const { buildPaymentTypesTable } = require('./databases/payment-types');
 const { buildOrderTable } = require('./databases/orders');
+const { buildOrderProductTable } = require('./databases/order_product');
 const { buildEmployee_TrainingPgrmTable } = require('./databases/employee_trainingPgrm');
 const { buildEmpCompTable } = require('./databases/employee_computer');
 
@@ -21,7 +22,7 @@ setTimeout(buildProductTable, 500);
 setTimeout(buildEmployeeTable, 600);
 setTimeout(buildPaymentTypesTable, 700);
 setTimeout(buildOrderTable, 800);
+setTimeout(buildOrderProductTable, 900);
 setTimeout(buildEmpCompTable, 1000);
 setTimeout(buildEmployee_TrainingPgrmTable, 1100);
-
 

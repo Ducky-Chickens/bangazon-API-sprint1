@@ -19,7 +19,7 @@ module.exports.buildOrderTable = () => {
 
     orders.forEach( ({order_date, payment_type_id, create_date}) => {
       db.run(`INSERT INTO orders (order_date, payment_type_id)
-              VALUES ("${order_date}", "${payment_type_id}")`, (err) => {
+              VALUES ("${order_date}", ${payment_type_id})`, (err) => {
                 if(err) return err;
               });
     });

@@ -11,4 +11,15 @@ npm i
 
 npm build tables
 
+// Run a local server to access the data in browser
+
+http-server
+
 ```
+
+# Employees ERD
+
+![Employees ERD](/ERD/employees-better.png)
+# Customers ERD
+
+![Customers ERD](/ERD/customers-products_v2.png)

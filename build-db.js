@@ -12,13 +12,13 @@ const { buildOrderTable } = require('./databases/orders');
 const { buildEmpCompTable } = require('./databases/employee_computer');
 
 setTimeout(buildProgramsTable, 0);
-setTimeout(buildDepartmentTable, 50);
-setTimeout(buildCustomerTable, 100);
-setTimeout(buildComputerTable, 150);
-setTimeout(buildProductTypesTable, 200);
-setTimeout(buildProductTable, 250);
-setTimeout(buildEmployeeTable, 350);
-setTimeout(buildPaymentTypesTable, 450);
-setTimeout(buildOrderTable, 600);
-setTimeout(buildEmpCompTable, 750);
+setTimeout(buildDepartmentTable, 100);
+setTimeout(buildCustomerTable, 200);
+setTimeout(buildComputerTable, 300);
+setTimeout(buildProductTypesTable, 400);
+setTimeout(buildProductTable, 500);
+setTimeout(buildEmployeeTable, 600);
+setTimeout(buildPaymentTypesTable, 700);
+setTimeout(buildOrderTable, 800);
+setTimeout(buildEmpCompTable, 1000);
 

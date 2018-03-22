@@ -19,7 +19,7 @@ module.exports.getOneComputer = ({params: {compId}}, res, next) => {
 };
 
 module.exports.postNewComputer = (req, res, next) => {
-  addSingleComputer(req.body.computer)
+  addSingleComputer(req.body)
   .then(computer => {
     res.status(200).json(computer)
   })

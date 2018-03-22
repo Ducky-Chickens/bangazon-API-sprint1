@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); //reads json in req.body
 const routes = require('./routes/');
 require('dotenv').config();
 
-app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.json()); // tell express to use json encoded bodies
 
 app.use("/api/", routes);
 

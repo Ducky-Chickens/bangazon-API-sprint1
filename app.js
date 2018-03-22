@@ -20,7 +20,7 @@ app.use( (err, req, res, next) => {
   })
 });
 
-const port = process.env.PORT || 6666;
+const port = process.env.PORT || 8666;
 
 app.listen(port, () => {
   console.log(`listening to port ${port}`);

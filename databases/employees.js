@@ -23,8 +23,8 @@ module.exports.buildEmployeeTable = () => {
 	  "${last_name}",
           "${email}",
           ${department_id}
-	)`);
-       });
+	      )`);
+        });
       }
     )
   });

@@ -4,8 +4,6 @@ const sqlite3 = require('sqlite3').verbose();
 const faker = require('faker');
 const { createWriteStream } = require('fs');
 
-
-
 let generateEmployees = () => {
   let employees = [];
 	
@@ -24,7 +22,6 @@ let generateEmployees = () => {
     }
   return employees;
 }
-
 
 let employees = generateEmployees();
 let employeeStream = createWriteStream('./data/employees.json');

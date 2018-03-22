@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const routes = require('./routes/');
-require('dotenv').config();
+// require('dotenv').config();
+
+app.use(bodyParser.json()); // support json encoded bodies
 
 app.use("/api/", routes);
 
@@ -20,7 +23,7 @@ app.use( (err, req, res, next) => {
   })
 });
 
-const port = process.env.PORT || 6666;
+const port = process.env.PORT || 8666;
 
 app.listen(port, () => {
   console.log(`listening to port ${port}`);

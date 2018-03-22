@@ -9,3 +9,14 @@ module.exports.getAllDepartments = () => {
     });
   });
 };
+
+module.exports.getOneDepartment = (id) => {
+  return new Promise((resolve, reject) => {
+    db.get(`
+    SELECT * FROM departments WHERE department_id = ${id}`,
+    (err, dept) => {
+      if (err) {return reject(err)};
+      resolve(dept);
+    });
+  });
+};

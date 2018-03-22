@@ -8,7 +8,7 @@ const generateOrders = () => {
 
   for (let i = 0; i < 20; i ++) {
     let orderDate = faker.date.past();
-    orders.push({"orderDate": orderDate.toLocaleDateString(), "payment_type_id": null});
+    orders.push({"order_date": orderDate.toLocaleDateString(), "payment_type_id": null});
   }
 
   return { orders };

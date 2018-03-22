@@ -8,4 +8,4 @@ module.exports.getAllComps = () => {
       resolve(comps);
     });
   });
-};
+}

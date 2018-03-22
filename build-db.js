@@ -6,16 +6,19 @@ const { buildCustomerTable } = require('./databases/customers');
 const { buildProgramsTable } = require('./databases/training-programs');
 const { buildEmployeeTable } = require('./databases/employees');
 const { buildProductTypesTable } = require('./databases/prod-types');
+const { buildProductTable } = require('./databases/products')
 const { buildPaymentTypesTable } = require('./databases/payment-types');
 const { buildOrderTable } = require('./databases/orders');
+
 
 
 setTimeout(buildProgramsTable, 0);
 setTimeout(buildDepartmentTable, 50);
 setTimeout(buildCustomerTable, 100);
 setTimeout(buildComputerTable, 150);
-setTimeout(buildEmployeeTable, 200);
-setTimeout(buildProductTypesTable, 250);
-setTimeout(buildPaymentTypesTable, 300);
-setTimeout(buildOrderTable, 350);
+setTimeout(buildProductTypesTable, 200);
+setTimeout(buildProductTable, 250);
+setTimeout(buildEmployeeTable, 350);
+setTimeout(buildPaymentTypesTable, 400);
+setTimeout(buildOrderTable, 450);
 

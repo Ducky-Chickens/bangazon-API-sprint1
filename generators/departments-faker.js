@@ -2,8 +2,9 @@
 
 const sqlite3 = require('sqlite3').verbose();
 const faker = require('faker');
+const { createWriteStream } = require('fs');
 
-module.exports.generateDepartments = () => {
+const generateDepartments = () => {
 	let departments = [];
 
 	for (let i = 0; i < 5; i++) {
@@ -16,3 +17,7 @@ module.exports.generateDepartments = () => {
 
 	return departments;
 }
+
+let departments = generateDepartments();
+let deptStream = createWriteStream('./data/departments.json');
+deptStream.write(JSON.stringify(departments));

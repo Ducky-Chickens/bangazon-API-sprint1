@@ -1,0 +1,112 @@
+{
+  "orders": [
+    {
+      "order_date": "2017-7-15",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-3-29",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-5-23",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-5-22",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-12-9",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-11-14",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-6-27",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2018-2-2",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-12-14",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-5-22",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-6-14",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-4-10",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2018-3-1",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2018-2-1",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-5-28",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-12-6",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-5-28",
+      "payment_type_id": null
+    },
+    {
+      "order_date": "2017-10-10",
+      "payment_type_id": 5
+    },
+    {
+      "order_date": "2017-10-9",
+      "payment_type_id": 4
+    },
+    {
+      "order_date": "2017-12-20",
+      "payment_type_id": 19
+    },
+    {
+      "order_date": "2017-12-20",
+      "payment_type_id": 17
+    },
+    {
+      "order_date": "2017-12-20",
+      "payment_type_id": 17
+    },
+    {
+      "order_date": "2017-12-20",
+      "payment_type_id": 17
+    },
+    {
+      "order_date": "2017-12-20",
+      "payment_type_id": 1
+    },
+    {
+      "order_date": "2017-12-20",
+      "payment_type_id": 1
+    },
+    {
+      "order_date": "2017-12-20",
+      "payment_type_id": 2
+    },
+    {
+      "order_date": "2017-12-20",
+      "payment_type_id": 2
+    }
+  ]
+}

@@ -14,7 +14,7 @@ module.exports.buildComputerTable = () => {
       )`,
       () => {
         computers.forEach(({ purchaseDate }) => {
-          db.run(`INSERT INTO computers VALUES (${null}, "${purchaseDate}", ${null})`);
+          db.run(`INSERT INTO computers VALUES (null, "${purchaseDate}", ${null})`);
       });
     })
   });

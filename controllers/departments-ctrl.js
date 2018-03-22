@@ -1,4 +1,4 @@
-const { getAllDepartments, getOneDepartment } = require('../models/Departments');
+const { getAllDepartments, getOneDepartment, addSingleDepartment } = require('../models/Departments');
 
 module.exports.getDepartments = (req, res, next) => {
   getAllDepartments()
@@ -20,4 +20,14 @@ module.exports.getDepartment = (req, res, next) => {
     }
   })
   .catch(err => next(err));
+}
+
+module.exports.postNewDepartment = (req, res, next) => {
+  addSingleDepartment(req.body)
+  .then(dept => {
+    res.status(200).json(dept);
+  })
+  .catch(err => {
+    next(err);
+  });
 }

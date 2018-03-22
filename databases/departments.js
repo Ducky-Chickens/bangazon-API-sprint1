@@ -18,7 +18,7 @@ module.exports.buildDepartmentTable = () => {
 	db.run(`INSERT INTO departments VALUES (
 	  ${null},
 	  "${dept_name}",
-	  "${supervisor_id}",
+	  ${supervisor_id},
 	  ${budget}
         )`);
       });

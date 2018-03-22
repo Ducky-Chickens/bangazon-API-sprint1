@@ -23,8 +23,8 @@ module.exports.buildDepartmentTable = () => {
 					db.run(`INSERT INTO departments VALUES (
 					${null},
 					"${dept_name}",
-					${supervisor_id},
-					"${budget}"
+					"${supervisor_id}",
+					${budget}
 				)`);
 				});
 			}

@@ -36,7 +36,7 @@ module.exports.addProgram = (req, res, next) => {
   })
 }
 
-module.exports.editProgramByDate = (res, req, next) => {
+module.exports.editProgramByDate = (req, res, next) => {
   editProgram(req.params.programId, req.body)
   .then(data => {
     if(data){

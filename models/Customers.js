@@ -36,7 +36,6 @@ module.exports.addCustomer = ({ first_name, last_name, join_date }) => {
 module.exports.editCustomerName = ({ customer_id, first_name, last_name }) => {
   return new Promise( (resolve, reject) => {
     db.run(`UPDATE customers SET
-    customer_id=${customer_id},
     first_name="${first_name}",
     last_name="${last_name}"
     WHERE customer_id = ${customer_id}`, function(err, computer) {

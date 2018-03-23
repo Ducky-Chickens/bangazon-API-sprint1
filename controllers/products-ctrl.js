@@ -1,5 +1,5 @@
 'use strict';
-const { getAllProducts, getSingleProduct, addSingleProduct, editProduct, deleteProduct }  = require('../models/Poduct');
+const { getAllProducts, getSingleProduct, addSingleProduct, editProduct, deleteProduct }  = require('../models/Product');
 
 //Get all products
 module.exports.getProducts = (req, res, next) => {
@@ -12,7 +12,7 @@ module.exports.getProducts = (req, res, next) => {
 
 //Get single product
 module.exports.getOneProduct = ({params: {prodId}}, res, next) => {
-  getSingleProduct(prodID)
+  getSingleProduct(prodId)
   .then(product => {
     res.status(200).json(product)
   })
@@ -30,7 +30,7 @@ module.exports.postNewProduct = (req, res, next) => {
 
 //Edit a product
 module.exports.editProductByColumn = (req, res, next) => {
-  editProduct(req.params.prodID, req.body)
+  editProduct(req.params.prodId, req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);
@@ -42,11 +42,8 @@ module.exports.editProductByColumn = (req, res, next) => {
   })
 };
 
+//TODO: Decide as a team how and when to delete a product
 //Delete a product
 module.exports.deleteOneProduct = (req, res, next) => {
-  deleteProduct(req.body.product_id)
-  .then(data => {
-    res.status(200).json(data);
-  })
-  .catch(err => next(err));
+  console.log('deleteOneProduct called. deleteProduct function:', deleteProduct);
 };

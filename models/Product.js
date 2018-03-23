@@ -48,7 +48,6 @@ module.exports.editProduct = (id, { column, value }) => {
   });
 };
 
-//TODO: Decide as a team how and when to delete a product
 //Delete a product
 module.exports.deleteProduct = (prodID) => {
   return new Promise ((resolve, reject) => {

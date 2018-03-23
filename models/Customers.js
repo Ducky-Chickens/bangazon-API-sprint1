@@ -12,3 +12,13 @@ module.exports.getAllCustomers = () => {
   });
 
 }
+
+module.exports.getCustomer = (custID) => {
+  return new Promise( (resolve, reject) => {
+    db.all(`SELECT * FROM customers c WHERE c.customer_id = ${custID}`, (customer, err) => {
+      if (err) reject (err);
+      resolve(customer);
+    });
+  });
+
+}

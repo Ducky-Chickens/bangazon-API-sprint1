@@ -49,7 +49,7 @@ module.exports.deleteComputer = compID => {
     db.get(`DELETE FROM computers WHERE computer_id=${compID}`, 
     function(err, computer) {
       if (err) return reject(err);
-      resolve(this.sql + " successful");
+      resolve({this: this});
     });
   });
 };

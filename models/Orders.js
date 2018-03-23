@@ -46,12 +46,12 @@ module.exports.getSingleOrder = orderID => {
 //   })
 // }
 
-// module.exports.deletePaymentType = payTypeID => {
-//   return new Promise ((resolve, reject) => {
-//     db.run(`DELETE FROM orders WHERE payment_type_id=${payTypeID}`, 
-//     function(err, payType) {
-//       if (err) return reject(err);
-//       resolve({changes: this.changes});
-//     });
-//   });
-// };
+module.exports.deleteOrder = orderID => {
+  return new Promise ((resolve, reject) => {
+    db.run(`DELETE FROM orders WHERE order_id=${orderID}`, 
+    function(err, order) {
+      if (err) return reject(err);
+      resolve({ status: `${this.changes} order deleted`});
+    });
+  });
+};

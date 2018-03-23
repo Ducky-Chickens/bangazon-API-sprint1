@@ -23,12 +23,22 @@ module.exports.getOneDepartment = (id) => {
 
 module.exports.addSingleDepartment = ({dept_name, supervisor_id, budget}) => {
   return new Promise ((resolve, reject) => {
-    console.log(dept_name, supervisor_id, budget);
     db.run(`INSERT INTO departments
     VALUES (null, "${dept_name}", ${supervisor_id}, ${budget})`,
   function(err, dept) {
     if (err) return reject(err);
     resolve ({ id : this.lastID });
   });
+  });
+};
+
+module.exports.editDepartment = (id, { column, value }) => {
+  return new Promise((resolve, reject) => {
+      db.run(`UPDATE departments SET ${column} = "${value}"
+      WHERE department_id = ${id}
+      `, function (err) {
+        if (err) { return reject(err) };
+        resolve({changes: this.changes});
+      });
   });
 };

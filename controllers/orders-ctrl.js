@@ -1,4 +1,4 @@
-const { getAllOrders, getSingleOrder, deleteOrder } = require('../models/Orders');
+const { getAllOrders, getSingleOrder, deleteOrder, addSingleOrder } = require('../models/Orders');
 
 module.exports.getOrders = (req, res, next) => {
   getAllOrders()
@@ -16,18 +16,18 @@ module.exports.getOneOrder = ({params: {orderId}}, res, next) => {
   .catch ( err => next(err));
 }
 
-// module.exports.postNewOrder = (req, res, next) => {
-//   addSingleOrder(req.body)
-//   .then( order => {
-//     if (order) {
-//       res.status(200).json(order);
-//     } else{
-//       let error = new Error('Order not found!');
-//       error.status = 404;
-//       next(error);
-//     }
-//   })
-// }
+module.exports.postNewOrder = (req, res, next) => {
+  addSingleOrder(req.body)
+  .then( order => {
+    if (order) {
+      res.status(200).json(order);
+    } else {
+      let error = new Error('Order not created!');
+      error.status = 404;
+      next(error);
+    }
+  })
+}
 
 // module.exports.editOrderByColumn = (req, res, next) => {
 //   editOrder(req.params.orderId, req.body)

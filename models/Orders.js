@@ -21,18 +21,17 @@ module.exports.getSingleOrder = orderID => {
   });
 };
 
-
-// module.exports.addSinglePaymentType = ({type, account_number, customer_id}) => {
-//   return new Promise ((resolve, reject) => {
-//     db.run(`INSERT INTO orders
-//     VALUES (null, "${type}", ${account_number}, ${customer_id})
-//     `,
-//     function(err, newPayType) {
-//       if (err) return reject(err);
-//       resolve({this: this.lastID});
-//     });
-//   });
-// };
+module.exports.addSingleOrder = ({order_date}) => {
+  return new Promise ((resolve, reject) => {
+    db.run(`INSERT INTO orders
+    VALUES (null, "${order_date}", null)
+    `,
+    function(err, newOrder) {
+      if (err) return reject(err);
+      resolve({id: this.lastID});
+    });
+  });
+};
 
 // module.exports.editPaymentType = (id, { column, value }) => {
 //   return new Promise((resolve, reject) => {

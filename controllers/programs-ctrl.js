@@ -9,7 +9,7 @@ module.exports.getPrograms = (req, res, next) => {
   })
   .catch(err => next(err));
 }
-//get single program by its id
+
 module.exports.getProgram = (req, res, next) => {
   //pass in id through req.params
   getOneProgram(req.params.programId)
@@ -34,15 +34,16 @@ module.exports.addProgram = (req, res, next) => {
       res.status(200).json(data);
     } else {
       let error = new Error('Failed to add Program');
-      //TEMPORARY SOLUTION, send back 500 as generic server error
+      //send back 500 as generic server error
       error.status = 500;
       next(error);
     }
   })
+  .catch(err => next(err));
 }
 
 module.exports.editProgramByColumn = (req, res, next) => {
-  // pass in req params id AND req body object ---> postman
+  // pass in req params id and req.body object ---> postman
   editProgram(req.params.programId, req.body)
   .then(data => {
     if(data){
@@ -53,6 +54,7 @@ module.exports.editProgramByColumn = (req, res, next) => {
       next(error);
     }
   })
+  .catch(err => next(err));
 }
 
 module.exports.removeProgramById = (req, res, next) => {
@@ -77,4 +79,5 @@ module.exports.removeProgramById = (req, res, next) => {
       next(error);
     }
   })
+  .catch(err => next(err));
 }

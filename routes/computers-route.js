@@ -4,8 +4,8 @@ const { getComputers, getOneComputer, postNewComputer, editComputerByColumn, del
 
 compRouter.get('/computers', getComputers);
 compRouter.post('/computers', postNewComputer);
+compRouter.delete('/computers', deleteOneComputer);
 compRouter.get('/computers/:compId', getOneComputer);
 compRouter.put('/computers/:compId', editComputerByColumn);
-compRouter.delete('/computers', deleteOneComputer);
 
 module.exports = compRouter;

@@ -15,7 +15,6 @@ module.exports.getSingleComputer = compID => {
     db.get(`SELECT * FROM computers
     WHERE computer_id=${compID}`, (err, computer) => {
       if (err) return reject(err);
-      // computer.computer_id
       resolve(computer);
     });
   });
@@ -46,10 +45,10 @@ module.exports.editComputer = (id, { column, value }) => {
 
 module.exports.deleteComputer = compID => {
   return new Promise ((resolve, reject) => {
-    db.get(`DELETE FROM computers WHERE computer_id=${compID}`, 
+    db.run(`DELETE FROM computers WHERE computer_id=${compID}`, 
     function(err, computer) {
       if (err) return reject(err);
-      resolve(this.sql + " successful");
+      resolve({changes: this.changes});
     });
   });
 };

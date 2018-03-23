@@ -1,5 +1,6 @@
 'use strict'; 
-const { getAllPrograms, getOneProgram, addNewProgram, editProgram } = require('../models/Training-programs');
+const { getAllPrograms, getOneProgram, addNewProgram, 
+  editProgram, removeProgram } = require('../models/Training-programs');
 
 module.exports.getPrograms = (req, res, next) => {
   getAllPrograms()
@@ -8,7 +9,7 @@ module.exports.getPrograms = (req, res, next) => {
   })
   .catch(err => next(err));
 }
-//get single program by its id
+
 module.exports.getProgram = (req, res, next) => {
   //pass in id through req.params
   getOneProgram(req.params.programId)
@@ -33,15 +34,16 @@ module.exports.addProgram = (req, res, next) => {
       res.status(200).json(data);
     } else {
       let error = new Error('Failed to add Program');
-      //TEMPORARY SOLUTION, send back 500 as generic server error
+      //send back 500 as generic server error
       error.status = 500;
       next(error);
     }
   })
+  .catch(err => next(err));
 }
 
 module.exports.editProgramByColumn = (req, res, next) => {
-  // pass in req params id AND req body object ---> postman
+  // pass in req params id and req.body object ---> postman
   editProgram(req.params.programId, req.body)
   .then(data => {
     if(data){
@@ -52,4 +54,30 @@ module.exports.editProgramByColumn = (req, res, next) => {
       next(error);
     }
   })
+  .catch(err => next(err));
+}
+
+module.exports.removeProgramById = (req, res, next) => {
+  //first getById to check if entry exists
+  getOneProgram(req.body.id)
+  .then(program => {
+    //check if program's start date is in future (greater than current date)
+    if(program){
+      if (new Date(program.start_date) > new Date()){
+        removeProgram(req.body.id)
+        .then(data => {
+          res.status(200).json(data);
+        })
+      } else {
+        let error = new Error('Failed to delete, program must be scheduled to start at a future date.');
+        error.status = 400;
+        next(error);
+      }
+    } else {
+      let error = new Error('Program not found!');
+      error.status = 404;
+      next(error);
+    }
+  })
+  .catch(err => next(err));
 }

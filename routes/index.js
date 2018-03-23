@@ -5,6 +5,10 @@ router.use(require('./computers-route'));
 router.use(require('./departments-route'));
 router.use(require('./programs-route'));
 router.use(require('./customers-route'));
-
+router.use(require('./programs-route'));
+router.use(require('./prodTypes-route'));
+router.use(require('./payment-types-route'));
+router.use(require('./orders-route'));
+router.use(require('./employees-route'));
 
 module.exports = router;

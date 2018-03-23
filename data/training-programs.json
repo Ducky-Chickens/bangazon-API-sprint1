@@ -8,13 +8,13 @@
     },
     {
       "program_name": "Engineer",
-      "start_date": "2018-3-21",
+      "start_date": "2018-9-11",
       "end_date": "2019-3-1",
       "max_attendees": 77
     },
     {
       "program_name": "Architect",
-      "start_date": "2018-3-21",
+      "start_date": "2018-6-21",
       "end_date": "2019-1-19",
       "max_attendees": 61
     },
@@ -26,7 +26,7 @@
     },
     {
       "program_name": "Technician",
-      "start_date": "2018-3-21",
+      "start_date": "2018-9-21",
       "end_date": "2019-3-8",
       "max_attendees": 83
     },
@@ -38,13 +38,13 @@
     },
     {
       "program_name": "Orchestrator",
-      "start_date": "2018-3-21",
-      "end_date": "2019-3-9",
+      "start_date": "2019-1-1",
+      "end_date": "2019-6-9",
       "max_attendees": 44
     },
     {
       "program_name": "Associate",
-      "start_date": "2018-3-21",
+      "start_date": "2018-4-1",
       "end_date": "2018-4-17",
       "max_attendees": 64
     }

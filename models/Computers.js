@@ -15,7 +15,6 @@ module.exports.getSingleComputer = compID => {
     db.get(`SELECT * FROM computers
     WHERE computer_id=${compID}`, (err, computer) => {
       if (err) return reject(err);
-      // computer.computer_id
       resolve(computer);
     });
   });
@@ -28,6 +27,28 @@ module.exports.addSingleComputer = ({purchaseDate}) => {
     function(err, computer) {
       if (err) return reject(err);
       resolve({ id : this.lastID });
+    });
+  });
+};
+
+module.exports.editComputer = (id, { column, value }) => {
+  return new Promise((resolve, reject) => {
+    // update table set column where id = param id
+      db.run(`UPDATE computers SET "${column}" = "${value}"
+      WHERE computer_id = ${id}
+      `, function (err) {
+        if (err) { return reject(err) };
+        resolve({changes: this.changes});
+      });
+  })
+}
+
+module.exports.deleteComputer = compID => {
+  return new Promise ((resolve, reject) => {
+    db.run(`DELETE FROM computers WHERE computer_id=${compID}`, 
+    function(err, computer) {
+      if (err) return reject(err);
+      resolve({changes: this.changes});
     });
   });
 };

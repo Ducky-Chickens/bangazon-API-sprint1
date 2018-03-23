@@ -15,7 +15,6 @@ module.exports.getSingleComputer = compID => {
     db.get(`SELECT * FROM computers
     WHERE computer_id=${compID}`, (err, computer) => {
       if (err) return reject(err);
-      // computer.computer_id
       resolve(computer);
     });
   });

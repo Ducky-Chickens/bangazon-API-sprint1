@@ -10,3 +10,13 @@ module.exports.getAllPaymentTypes = () => {
     });
   });
 };
+
+module.exports.getSinglePaymentType = payTypeID => {
+  return new Promise ((resolve, reject) => {
+    db.get(`SELECT * FROM payment_types
+    WHERE payment_type_id=${payTypeID}`, (err, payType) => {
+      if (err) return reject(err);
+      resolve(payType);
+    });
+  });
+};

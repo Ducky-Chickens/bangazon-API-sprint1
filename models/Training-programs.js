@@ -15,7 +15,6 @@ module.exports.getAllPrograms = () => {
 
 module.exports.getOneProgram = (id) => {
   return new Promise((resolve, reject) => {
-    // * db.get for individual selection
     db.get(`
     SELECT * FROM training_programs
     WHERE program_id = ${id}
@@ -26,22 +25,19 @@ module.exports.getOneProgram = (id) => {
   })
 }
 
-//takes an entry object from req.body
+//takes a data table entry object from req.body
 module.exports.addNewProgram = ({ title, startDate, endDate, max }) => {
   return new Promise((resolve, reject) => {
-    //insert all attributes of new entry  * use null for PK *
     db.run(`INSERT INTO training_programs
     VALUES (
       null, "${title}", "${startDate}", "${endDate}", ${max}
     )`, function (err) {
         if (err) { return reject(err) };
-        // sql gives access to last entry added id
         resolve({id: this.lastID});
       });
   })
 }
 
-//takes param id and req.body object
 module.exports.editProgram = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id
@@ -51,6 +47,18 @@ module.exports.editProgram = (id, { column, value }) => {
         if (err) { return reject(err) };
         resolve({changes: this.changes});
       });
+  })
+}
+
+module.exports.removeProgram = (id) => {
+  return new Promise((resolve, reject) => {
+    //delete row by id
+    db.run(`DELETE FROM training_programs
+    WHERE program_id = ${id}
+    `, function (err) {
+      if (err) { return reject(err) };
+      resolve({ status: `${this.changes} item deleted`});
+    });
   })
 }
 

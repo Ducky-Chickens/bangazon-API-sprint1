@@ -11,9 +11,9 @@ module.exports.getCustomers = (req, res, next) => {
 }
 
 module.exports.getOneCustomer = ({params: {custID}}, res, next) => {
-  getCustomer(custID)
+  getCustomer(`${custID}`)
   .then(customer => {
-    res.status(200).JSON(customer);
+    res.status(200).json(customer);
   })
   .catch(err => next(err));
 }

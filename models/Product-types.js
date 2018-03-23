@@ -3,7 +3,6 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('bangazon.sqlite');
 
 module.exports.getAllProdTypes = () => {
-  console.log('getTypes called');
   return new Promise((resolve, reject) => {
     db.all(`
     SELECT * FROM product_types

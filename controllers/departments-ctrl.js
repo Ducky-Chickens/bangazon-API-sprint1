@@ -1,4 +1,4 @@
-const { getAllDepartments, getOneDepartment, addSingleDepartment } = require('../models/Departments');
+const { getAllDepartments, getOneDepartment, addSingleDepartment, editDepartment } = require('../models/Departments');
 
 module.exports.getDepartments = (req, res, next) => {
   getAllDepartments()
@@ -31,3 +31,16 @@ module.exports.postNewDepartment = (req, res, next) => {
     next(err);
   });
 }
+
+module.exports.editDepartmentByColumn = (req, res, next) => {
+  editDepartment(req.params.departmentId, req.body)
+  .then(dept => {
+    if(dept){
+      res.status(200).json(dept);
+    } else {
+      let error = new Error('Failed to edit Department');
+      error.status = 500;
+      next(error);
+    };
+  });
+};

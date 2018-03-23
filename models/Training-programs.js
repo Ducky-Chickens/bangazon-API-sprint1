@@ -15,6 +15,7 @@ module.exports.getAllPrograms = () => {
 
 module.exports.getOneProgram = (id) => {
   return new Promise((resolve, reject) => {
+    // * db.get for individual selection
     db.get(`
     SELECT * FROM training_programs
     WHERE program_id = ${id}
@@ -27,6 +28,7 @@ module.exports.getOneProgram = (id) => {
 
 //takes a data table entry object from req.body
 module.exports.addNewProgram = ({ title, startDate, endDate, max }) => {
+   //insert all attributes of new entry  * use null for PK *
   return new Promise((resolve, reject) => {
     db.run(`INSERT INTO training_programs
     VALUES (
@@ -38,6 +40,7 @@ module.exports.addNewProgram = ({ title, startDate, endDate, max }) => {
   })
 }
 
+//takes param id and req.body object
 module.exports.editProgram = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id

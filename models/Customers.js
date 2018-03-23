@@ -32,3 +32,14 @@ module.exports.addCustomer = ({ first_name, last_name, join_date }) => {
     );
   });
 };
+
+module.exports.editCustomerName = ({ customer_id, first_name, last_name }) => {
+  return new Promise( (resolve, reject) => {
+    db.run(`INSERT INTO customers WHERE customer_id = ${customer_id}
+    VALUES(null, "${first_name}", "${last_name}", ${customer_id}, customer.join_date)`, function(err, computer) {
+      if (err) return reject(err);
+      resolve({ id : this.lastID });
+      }
+    );
+  });
+};

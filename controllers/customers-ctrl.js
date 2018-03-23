@@ -1,6 +1,6 @@
 'use strict';
 
-const { getAllCustomers, getCustomer, addCustomer } = require('../models/Customers');
+const { getAllCustomers, getCustomer, addCustomer, editCUstomerName } = require('../models/Customers');
 
 module.exports.getCustomers = (req, res, next) => {
   getAllCustomers()
@@ -25,5 +25,18 @@ module.exports.postNewCustomer = (req, res, next) => {
   })
   .catch(err => {
     next(err);
+  })
+}
+
+module.exports.editCustomer = (req, res, next) => {
+  editCustomerName(res.body)
+  .then(data => {
+    if(data){
+      res.status(200).json(data);
+    } else {
+      let error = new Error('Failed to edit Customer');
+      error.status = 500;
+      next(error);
+    }
   })
 }

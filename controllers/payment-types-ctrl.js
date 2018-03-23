@@ -1,4 +1,4 @@
-const { getAllPaymentTypes, getSinglePaymentType, addSinglePaymentType } = require('../models/Payment-types');
+const { getAllPaymentTypes, getSinglePaymentType, addSinglePaymentType, editPaymentType, deletePaymentType } = require('../models/Payment-types');
 
 module.exports.getPaymentTypes = (req, res, next) => {
   getAllPaymentTypes()
@@ -28,3 +28,26 @@ module.exports.postNewPaymentType = (req, res, next) => {
     }
   })
 }
+
+module.exports.editPaymentTypeByColumn = (req, res, next) => {
+  editPaymentType(req.params.payTypeId, req.body)
+  .then(data => {
+    if(data){
+      res.status(200).json(data);
+    } else {
+      let error = new Error('Failed to edit payment type');
+      error.status = 500;
+      next(error);
+    }
+  })
+}
+
+module.exports.deleteOnePaymentType = (req, res, next) => {
+  deletePaymentType(req.body.payment_type_id)
+  .then(data => {
+    res.status(200).json(data)
+  })
+  .catch(err => {
+    next(err);
+  })
+};

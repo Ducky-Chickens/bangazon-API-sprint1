@@ -45,10 +45,10 @@ module.exports.editComputer = (id, { column, value }) => {
 
 module.exports.deleteComputer = compID => {
   return new Promise ((resolve, reject) => {
-    db.get(`DELETE FROM computers WHERE computer_id=${compID}`, 
+    db.run(`DELETE FROM computers WHERE computer_id=${compID}`, 
     function(err, computer) {
       if (err) return reject(err);
-      resolve({this: this});
+      resolve({changes: this.changes});
     });
   });
 };

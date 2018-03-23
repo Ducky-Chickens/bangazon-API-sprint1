@@ -33,3 +33,25 @@ module.exports.addSinglePaymentType = ({type, account_number, customer_id}) => {
     });
   });
 };
+
+module.exports.editPaymentType = (id, { column, value }) => {
+  return new Promise((resolve, reject) => {
+    // update table set column where id = param id
+      db.run(`UPDATE payment_types SET "${column}" = "${value}"
+      WHERE payment_type_id = ${id}
+      `, function (err) {
+        if (err) { return reject(err) };
+        resolve({changes: this.changes});
+      });
+  })
+}
+
+module.exports.deletePaymentType = payTypeID => {
+  return new Promise ((resolve, reject) => {
+    db.run(`DELETE FROM payment_types WHERE payment_type_id=${payTypeID}`, 
+    function(err, payType) {
+      if (err) return reject(err);
+      resolve({changes: this.changes});
+    });
+  });
+};

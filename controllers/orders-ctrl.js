@@ -59,27 +59,3 @@ module.exports.deleteOneOrder = (req, res, next) => {
     next(err);
   })
 };
-
-// module.exports.removeProgramById = (req, res, next) => {
-//   //first getById to check if entry exists
-//   getOneProgram(req.body.id)
-//   .then(program => {
-//     //check if program's start date is in future (greater than current date)
-//     if(program){
-//       if (new Date(program.start_date) > new Date()){
-//         removeProgram(req.body.id)
-//         .then(data => {
-//           res.status(200).json(data);
-//         })
-//       } else {
-//         let error = new Error('Failed to delete, program must be scheduled to start at a future date.');
-//         error.status = 400;
-//         next(error);
-//       }
-//     } else {
-//       let error = new Error('Program not found!');
-//       error.status = 404;
-//       next(error);
-//     }
-//   })
-// }

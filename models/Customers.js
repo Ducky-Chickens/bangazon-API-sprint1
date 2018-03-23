@@ -4,14 +4,14 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./bangazon.sqlite");
 
 module.exports.getAllCustomers = () => {
-  return new Promise( (resolve, reject) => {
-    db.all(`SELECT * FROM customers`, (allCustomers, err) => {
-      if (err) reject (err);
-      resolve(allCustomers);
+  return new Promise ((reject, resolve) => {
+    db.all(`SELECT * FROM customers`, (customers, err) => {
+      if (err) reject(err);
+      console.log(customers);
+      resolve(customers);
     });
   });
-
-}
+};
 
 module.exports.getCustomer = (custID) => {
   return new Promise( (resolve, reject) => {

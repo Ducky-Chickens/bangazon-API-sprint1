@@ -1,4 +1,4 @@
-const { getAllDepartments, getOneDepartment, addSingleDepartment, editDepartment } = require('../models/Departments');
+const { getAllDepartments, getOneDepartment, addSingleDepartment, editDepartment } = require('../models/Department');
 
 module.exports.getDepartments = (req, res, next) => {
   getAllDepartments()

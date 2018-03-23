@@ -1,4 +1,4 @@
-const { getAllComps, getSingleComputer, addSingleComputer, editComputer, deleteComputer } = require('../models/Computers');
+const { getAllComps, getSingleComputer, addSingleComputer, editComputer, deleteComputer } = require('../models/Computer');
 
 module.exports.getComputers = (req, res, next) => {
   getAllComps()

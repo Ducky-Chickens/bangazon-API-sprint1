@@ -1,6 +1,6 @@
 'use strict';
 
-const { getAllCustomers, getCustomer, addCustomer, editCUstomerName } = require('../models/Customers');
+const { getAllCustomers, getCustomer, addCustomer, editCustomerName } = require('../models/Customers');
 
 module.exports.getCustomers = (req, res, next) => {
   getAllCustomers()
@@ -29,7 +29,7 @@ module.exports.postNewCustomer = (req, res, next) => {
 }
 
 module.exports.editCustomer = (req, res, next) => {
-  editCustomerName(res.body)
+  editCustomerName(req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);

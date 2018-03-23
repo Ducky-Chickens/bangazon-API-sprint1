@@ -16,14 +16,15 @@ module.exports.getOnePaymentType = ({params: {payTypeId}}, res, next) => {
   .catch ( err => next(err));
 }
 
-
-// WHY THE FUCK IS THIS NOT RESOLVING IN POSTMAN
-// IT POSTS THE CONTENT TO THE DB AND SHOULD WORK WTF
 module.exports.postNewPaymentType = (req, res, next) => {
-  console.log(req.body);
   addSinglePaymentType(req.body)
   .then( payType => {
-    res.status(200).json(payType);
+    if (payType) {
+      res.status(200).json(payType);
+    } else{
+      let error = new Error('Payment Type not found!');
+      error.status = 404;
+      next(error);
+    }
   })
-  .catch( err => reject(err));
 }

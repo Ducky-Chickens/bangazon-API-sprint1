@@ -26,10 +26,10 @@ module.exports.addSinglePaymentType = ({type, account_number, customer_id}) => {
   return new Promise ((resolve, reject) => {
     db.run(`INSERT INTO payment_types
     VALUES (null, "${type}", ${account_number}, ${customer_id})
-    `),
+    `,
     function(err, newPayType) {
       if (err) return reject(err);
-      resolve(newPayType);
-    };
+      resolve({this: this.lastID});
+    });
   });
 };

@@ -1,4 +1,4 @@
-const { getAllOrders, getSingleOrder, deleteOrder, addSingleOrder } = require('../models/Orders');
+const { getAllOrders, getSingleOrder, deleteOrder, addSingleOrder, editOrder } = require('../models/Orders');
 
 module.exports.getOrders = (req, res, next) => {
   getAllOrders()
@@ -14,7 +14,7 @@ module.exports.getOneOrder = ({params: {orderId}}, res, next) => {
     res.status(200).json(order)
   })
   .catch ( err => next(err));
-}
+};
 
 module.exports.postNewOrder = (req, res, next) => {
   addSingleOrder(req.body)
@@ -27,20 +27,20 @@ module.exports.postNewOrder = (req, res, next) => {
       next(error);
     }
   })
-}
+};
 
-// module.exports.editOrderByColumn = (req, res, next) => {
-//   editOrder(req.params.orderId, req.body)
-//   .then(data => {
-//     if(data){
-//       res.status(200).json(data);
-//     } else {
-//       let error = new Error('Failed to edit order');
-//       error.status = 500;
-//       next(error);
-//     }
-//   })
-// }
+module.exports.editOrderByColumn = (req, res, next) => {
+  editOrder(req.params.orderId, req.body)
+  .then(data => {
+    if(data){
+      res.status(200).json(data);
+    } else {
+      let error = new Error('Failed to edit order');
+      error.status = 500;
+      next(error);
+    }
+  })
+};
 
 module.exports.deleteOneOrder = (req, res, next) => {
   let error1 = new Error('Failed to delete, order must not already be associated with payment type.')

@@ -33,17 +33,17 @@ module.exports.addSingleOrder = ({order_date}) => {
   });
 };
 
-// module.exports.editPaymentType = (id, { column, value }) => {
-//   return new Promise((resolve, reject) => {
-//     // update table set column where id = param id
-//       db.run(`UPDATE orders SET "${column}" = "${value}"
-//       WHERE payment_type_id = ${id}
-//       `, function (err) {
-//         if (err) { return reject(err) };
-//         resolve({changes: this.changes});
-//       });
-//   })
-// }
+module.exports.editOrder = (id, { column, value }) => {
+  return new Promise((resolve, reject) => {
+    // update table set column where id = param id
+      db.run(`UPDATE orders SET "${column}" = "${value}"
+      WHERE order_id = ${id}
+      `, function (err) {
+        if (err) { return reject(err) };
+        resolve({changes: this.changes});
+      });
+  })
+}
 
 module.exports.deleteOrder = orderID => {
   return new Promise ((resolve, reject) => {

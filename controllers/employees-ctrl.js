@@ -1,4 +1,4 @@
-const { getAllEmployees, getOneEmployee, addSingleEmployee, editEmployee } = require('../models/Employees');
+const { getAllEmployees, getOneEmployee, addSingleEmployee, editEmployee } = require('../models/Employee');
 
 module.exports.getEmployees = (req, res, next) => {
   getAllEmployees()

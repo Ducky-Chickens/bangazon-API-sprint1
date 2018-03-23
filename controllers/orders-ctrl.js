@@ -1,4 +1,4 @@
-const { getAllOrders, getSingleOrder, deleteOrder, addSingleOrder, editOrder } = require('../models/Orders');
+const { getAllOrders, getSingleOrder, deleteOrder, addSingleOrder, editOrder } = require('../models/Order');
 
 module.exports.getOrders = (req, res, next) => {
   getAllOrders()

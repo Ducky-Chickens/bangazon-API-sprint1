@@ -20,5 +20,15 @@ module.exports.getCustomer = (custID) => {
       resolve(customer);
     });
   });
+};
 
-}
+module.exports.addCustomer = ({ first_name, last_name, join_date }) => {
+  return new Promise( (resolve, reject) => {
+    db.run(`INSERT INTO customers 
+    VALUES(null, "${first_name}", "${last_name}", "${join_date}" )`, function(err, computer) {
+      if (err) return reject(err);
+      resolve({ id : this.lastID });
+      }
+    );
+  });
+};

@@ -12,8 +12,20 @@ module.exports.getAllCustomers = () => {
   });
 };
 
+module.exports.getActiveCusts = (status) => {
+  console.log("what is the status", status);
+  const statusQuery = (status === "true") ? 1 : 0;
+  console.log(statusQuery, "what is sent to sql?");  
+  return new Promise( (resolve, reject) => {
+    db.all(`SELECT * FROM customers WHERE active="${statusQuery}"`, (err, customer) => {
+      if (err) reject (err);
+      console.log(customer);
+      resolve(customer);
+    });
+  });
+};
+
 module.exports.getCustomer = (custID) => {
-  console.log(custID);
   return new Promise( (resolve, reject) => {
     db.all(`SELECT * FROM customers WHERE customer_id=${custID}`, (err, customer) => {
       if (err) reject (err);

@@ -12,14 +12,11 @@ module.exports.getAllCustomers = () => {
   });
 };
 
-module.exports.getActiveCusts = (status) => {
-  console.log("what is the status", status);
-  const statusQuery = (status === "true") ? 1 : 0;
-  console.log(statusQuery, "what is sent to sql?");  
+module.exports.getCustsByActivity = (status) => {
+  const statusQuery = (status === "true") ? 1 : 0; 
   return new Promise( (resolve, reject) => {
     db.all(`SELECT * FROM customers WHERE active="${statusQuery}"`, (err, customer) => {
       if (err) reject (err);
-      console.log(customer);
       resolve(customer);
     });
   });

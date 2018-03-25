@@ -1,10 +1,11 @@
 'use strict';
 
 const { getAllCustomers, getCustomer, addCustomer, editCustomerName, getActiveCusts } = require('../models/Customers');
+const getCustomersByQuery = require('../models/Customers');
 
 module.exports.getCustomers = ({query: {active}}, res, next) => {
-  console.log(active);
-  const customerQuery = active ? getCustsByActivity(active) : getAllCustomers()
+  const filter = active ? "getCustsByActivity" : "getAllCustomers";
+  getCustomersByQuery[filter](active)
   .then(allCustomers => {
     res.status(200).json(allCustomers);
   })

@@ -13,7 +13,6 @@ module.exports.getAllCustomers = () => {
 };
 
 module.exports.getCustomer = (custID) => {
-  console.log(custID);
   return new Promise( (resolve, reject) => {
     db.all(`SELECT * FROM customers WHERE customer_id=${custID}`, (err, customer) => {
       if (err) reject (err);

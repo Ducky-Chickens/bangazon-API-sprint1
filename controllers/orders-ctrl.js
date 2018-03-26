@@ -1,4 +1,4 @@
-const { getAllOrders, getSingleOrder, deleteOrder, addSingleOrder, patchOrder, getOrdersProducts } = require('../models/Order');
+const { getAllOrders, getSingleOrder, deleteOrder, addSingleOrder, patchOrder, editOrder, getOrdersProducts } = require('../models/Order');
 
 module.exports.getOrders = (req, res, next) => {
   getAllOrders()
@@ -36,6 +36,19 @@ module.exports.postNewOrder = (req, res, next) => {
 
 module.exports.editOrderByColumn = (req, res, next) => {
   patchOrder(req.params.orderId, req.body)
+  .then(data => {
+    if(data){
+      res.status(200).json(data);
+    } else {
+      let error = new Error('Failed to edit order column');
+      error.status = 500;
+      next(error);
+    }
+  })
+};
+
+module.exports.replaceOrder = (req, res, next) => {
+  editOrder(req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);

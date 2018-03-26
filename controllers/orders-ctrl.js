@@ -15,7 +15,6 @@ module.exports.getOneOrder = ({params: {orderId}}, res, next) => {
     .then( arrayProducts => {
       let joinedOrderProducts = { order };
       joinedOrderProducts.order.products = arrayProducts
-      
       res.status(200).json(joinedOrderProducts)
     })
   )

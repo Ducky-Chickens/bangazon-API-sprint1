@@ -37,10 +37,20 @@ module.exports.addNewProdType = ({ name }) => {
 module.exports.editProdType = (id, { name }) => {
   return new Promise((resolve, reject) => {
     db.run(`UPDATE product_types SET name = "${name}"
-      WHERE product_type_id = ${id}
-      `, function (err) {
+    WHERE product_type_id = ${id}
+    `, function (err) {
       return err ? reject(err) : resolve({ changes: this.changes });
-      });
+    });
+  })
+}
+
+module.exports.replaceProdType = ({ id, name }) => {
+  return new Promise((resolve, reject) => {
+    db.run(`UPDATE product_types SET name = "${name}"
+    WHERE product_type_id = ${id}
+    `, function (err) {
+      return err ? reject(err) : resolve({ changes: this.changes });
+    });
   })
 }
 

@@ -41,6 +41,23 @@ module.exports.addNewProgram = ({ title, startDate, endDate, max }) => {
 }
 
 //takes param id and req.body object
+module.exports.replaceProgram = ({ id, title, startDate, endDate, maxAttendees }) => {
+  return new Promise((resolve, reject) => {
+    // update table set column where id = param id
+      db.run(`UPDATE training_programs SET 
+      title = "${title}",
+      start_date = "${startDate}",
+      end_date = "${endDate}",
+      max_attendees = ${maxAttendees}
+      WHERE program_id = ${id}
+      `, function (err) {
+        if (err) { return reject(err) };
+        resolve({changes: this.changes});
+      });
+  })
+}
+
+//takes param id and req.body object
 module.exports.editProgram = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id

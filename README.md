@@ -23,3 +23,46 @@ http-server
 # Customers ERD
 
 ![Customers ERD](/ERD/customers-products_v2.png)
+
+# Departments
+http methods supported: GET, POST, PUT example body:
+
+```
+{
+	"department_id": "INT: include on PUT only",
+	"supervisor_id": "INT",
+	"budget": "INT: NOT NULL",
+	"dept_name": "TEXT: NOT NULL"
+}
+```
+# Employees
+http methods supported: GET, POST, PUT example body:
+
+```
+{
+	"employee_id": "INT: include on PUT only",
+	"first_name": "TEXT",
+	"last_name": "TEXT",
+	"email": "TEXT",
+  "department_id": "INT"
+}
+```
+# Third Party Libraries
+[Express](https://expressjs.com/)
+[Sqlite3](https://www.npmjs.com/package/sqlite3)
+[Nodemon](https://www.npmjs.com/package/nodemon)
+[Dotenv](https://www.npmjs.com/package/dotenv)
+[Body-parser](https://www.npmjs.com/package/body-parser-json)
+
+# Credits
+
+##Project Manager
+[Emily Lemmon](https://github.com/Rian501)
+
+##API Developers
+[David Hazlett](https://github.com/dhazlettjr)
+[Melissa Bell](https://github.com/melissabell456)
+[Valerie Freeman](https://github.com/Valerie-Freeman)
+[Hunter Phillips](https://github.com/hunterphillips)
+[Eli WIlson](https://github.com/e-x-wilson)
+

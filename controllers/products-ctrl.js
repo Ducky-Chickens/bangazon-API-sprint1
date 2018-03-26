@@ -1,5 +1,5 @@
 'use strict';
-const { getAllProducts, getSingleProduct, addSingleProduct, editProduct, deleteProduct }  = require('../models/Product');
+const { getAllProducts, getSingleProduct, addSingleProduct, patchProductObj, deleteProduct }  = require('../models/Product');
 const { getOrdersByProductId } = require('../models/Order_Product');
 
 //Get all products
@@ -30,8 +30,8 @@ module.exports.postNewProduct = (req, res, next) => {
 };
 
 //Edit a product
-module.exports.editProductByColumn = (req, res, next) => {
-  editProduct(req.params.prodId, req.body)
+module.exports.patchProductData = (req, res, next) => {
+  patchProductObj(req.params.prodId, req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);

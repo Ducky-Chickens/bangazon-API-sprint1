@@ -37,7 +37,7 @@ module.exports.addSingleProduct = ({ title, price, product_type_id, customer_id,
 };
 
 //Edit a product
-module.exports.editProduct = (id, { column, value }) => {
+module.exports.patchProductObj = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
       db.run(`UPDATE products SET "${column}" = "${value}"
       WHERE product_id = ${id}

@@ -62,21 +62,21 @@ http methods supported: GET, POST, PUT example body:
 }
 ```
 # Third Party Libraries
-[Express](https://expressjs.com/)
-[Sqlite3](https://www.npmjs.com/package/sqlite3)
-[Nodemon](https://www.npmjs.com/package/nodemon)
-[Dotenv](https://www.npmjs.com/package/dotenv)
-[Body-parser](https://www.npmjs.com/package/body-parser-json)
+-[Express](https://expressjs.com/)
+-[Sqlite3](https://www.npmjs.com/package/sqlite3)
+-[Nodemon](https://www.npmjs.com/package/nodemon)
+-[Dotenv](https://www.npmjs.com/package/dotenv)
+-[Body-parser](https://www.npmjs.com/package/body-parser-json)
 
 # Credits
 
 ##Project Manager
-[Emily Lemmon](https://github.com/Rian501)
+-[Emily Lemmon](https://github.com/Rian501)
 
 ##API Developers
-[David Hazlett](https://github.com/dhazlettjr)
-[Melissa Bell](https://github.com/melissabell456)
-[Valerie Freeman](https://github.com/Valerie-Freeman)
-[Hunter Phillips](https://github.com/hunterphillips)
-[Eli WIlson](https://github.com/e-x-wilson)
+-[David Hazlett](https://github.com/dhazlettjr)
+-[Melissa Bell](https://github.com/melissabell456)
+-[Valerie Freeman](https://github.com/Valerie-Freeman)
+-[Hunter Phillips](https://github.com/hunterphillips)
+-[Eli WIlson](https://github.com/e-x-wilson)
 

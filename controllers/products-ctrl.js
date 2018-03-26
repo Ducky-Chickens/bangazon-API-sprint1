@@ -53,7 +53,7 @@ module.exports.deleteOneProduct = (req, res, next) => {
       getOrdersByProductId(req.body.prodId)
       .then(orders => {
         if(orders.length > 0) {
-          let error = new Error('Failed to delete, an order has been placed for this product and connot be deleted.');
+          let error = new Error('Failed to delete, an order has been placed for this product and cannot be deleted.');
           error.status = 405;
           next(error);
         } else {

@@ -29,42 +29,41 @@ http-server
 ![Customers ERD](/ERD/customers-products_v2.png)
 
 # Departments
-http methods supported: GET, POST, PUT example body:
-
-### PUT
-```
-{
-	"column": "choose column",
-	"value": "choose value"
-}
-```
-### POST
-```
-{
-	"supervisor_id": INT,
-	"dept_name": "TEXT,
-	"budget": INT
-}
-```
+_GET_: access a list of all departments by running a GET call to http://localhost:8080/departments
++  - You can get the information on a single department by runnning a GET call to http://localhost:8080/departments/{departmentId}
++  > Note you need to have the unique ID number
++
++- _PUT_: update the info on a specific department by running a PUT call to http://localhost:8080/departments/{departmentId}
++
++  - Running a PUT requires that you submit the desired column and value to be edited.
++  - Example: 
++  ```
++  { "column": "dept_name", 
++  "value": "HR" }
++  ```
++- _POST_: submit a new department by running a POST call to http://localhost:8080/departments
++
++  - You must send a dept_name, followed by supervisor_id and budget to POST a new employee.
++  - Example: { "dept_name": "[TEXT]", "supervisor_id": [INT], "budget": [INT] }
++
 # Employees
-http methods supported: GET, POST, PUT example body:
-
-### PUT
-```
-{
-	"column": "choose column",
-	"value": "choose value"
-}
-```
-### POST
-```
-{
-	"first_name": TEXT,
-	"last_name": "TEXT,
-	"email": TEXT,
-	"department_id": INT
-}
-```
+_GET_: access a list of all employees by running a GET call to http://localhost:8080/employees
++  - You can get the information on a single employee by runnning a GET call to http://localhost:8080/employees/{employeeId}
++  > Note you need to have the unique ID number
++
++- _PUT_: update the info on a specific employee by running a PUT call to http://localhost:8080/employees/{employeeId}
++
++  - Running a PUT requires that you submit the desired column and value to be edited.
++  - Example: 
++  ```
++  { "column": "first_name", 
++  "value": "John" }
++  ```
++- _POST_: submit a new employee by running a POST call to http://localhost:8080/employees
++
++  - You must send a first_name, last_name, email followed by department_id to POST a new employee.
++  - Example: { "first_name": "[TEXT]", "last_name": [TEXT], "email": [TEXT] "department_id": [INT] }
++
 # Third Party Libraries
 - [Express](https://expressjs.com/)
 - [Sqlite3](https://www.npmjs.com/package/sqlite3)

@@ -36,7 +36,7 @@ module.exports.addSingleProduct = ({ title, price, product_type_id, customer_id,
   });
 };
 
-//Edit a product
+//Edit one attribute on a product
 module.exports.patchProductObj = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
       db.run(`UPDATE products SET "${column}" = "${value}"
@@ -45,6 +45,23 @@ module.exports.patchProductObj = (id, { column, value }) => {
         if (err) { return reject(err) };
         resolve({changes: this.changes});
       });
+  });
+};
+
+//Edit an entire product
+module.exports.putProductObj = ({ product_id, title, price, product_type_id, customer_id, description }) => {
+  return new Promise( (resolve, reject) => {
+    db.run(`UPDATE products SET
+    title="${title}",
+    price="${price}",
+    product_type_id=${product_type_id},
+    customer_id=${customer_id},
+    description="${description}"
+    WHERE product_id = ${product_id}`, function(err, product) {
+      if (err) return reject(err);
+      resolve({ numberOfChanges : this.changes });
+      }
+    );
   });
 };
 

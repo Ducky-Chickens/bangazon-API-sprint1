@@ -27,14 +27,14 @@ http-server
 # Departments
 http methods supported: GET, POST, PUT example body:
 
-###PUT
+### PUT
 ```
 {
 	"column": "choose column",
 	"value": "choose value"
 }
 ```
-###POST
+### POST
 ```
 {
 	"supervisor_id": INT,
@@ -45,14 +45,14 @@ http methods supported: GET, POST, PUT example body:
 # Employees
 http methods supported: GET, POST, PUT example body:
 
-###PUT
+### PUT
 ```
 {
 	"column": "choose column",
 	"value": "choose value"
 }
 ```
-###POST
+### POST
 ```
 {
 	"first_name": TEXT,
@@ -70,10 +70,10 @@ http methods supported: GET, POST, PUT example body:
 
 # Credits
 
-##Project Manager
+## Project Manager
 - [Emily Lemmon](https://github.com/Rian501)
 
-##API Developers
+## API Developers
 - [David Hazlett](https://github.com/dhazlettjr)
 - [Melissa Bell](https://github.com/melissabell456)
 - [Valerie Freeman](https://github.com/Valerie-Freeman)

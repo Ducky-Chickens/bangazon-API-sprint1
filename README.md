@@ -25,7 +25,7 @@ http-server
   - You can get the information on a single computer by runnning a GET call to http://localhost:8080/orders/{orderID}
   > Note you need to have the unique ID number
 
-- _PATCH_: update the info on a specific order by running a PUT call to http://localhost:8080/orders/{orderID}
+- _PATCH_: update the info on a specific order by running a PATCH call to http://localhost:8080/orders/{orderID}
 
   - Running a PATCH requires that you submit the desired column and value to be edited.
   - Example: 
@@ -55,7 +55,7 @@ http-server
   - You can get the information on a single computer by runnning a GET call to http://localhost:8080/payment-types/{paymentTypeID}
   > Note you need to have the unique ID number
 
-- _PATCH_: update the info on a specific payment type by running a PUT call to http://localhost:8080/payment-types/{payTypeID}
+- _PATCH_: update the info on a specific payment type by running a PATCH call to http://localhost:8080/payment-types/{payTypeID}
 
   - Running a PATCH requires that you submit the desired column and value to be edited.
   - Example: 

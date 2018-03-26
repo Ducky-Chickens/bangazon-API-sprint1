@@ -168,7 +168,7 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 }
 ```
 
-### Customers
+# Customers
 
 * GET You can access a list of all customers by running a Get call to `http://localhost:8080/api/customers`
 * GET one. You can get the information on a single customer by running a Get call to http://localhost:8080/api/customers/{customerID}.

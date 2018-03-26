@@ -54,16 +54,3 @@ module.exports.deleteOrder = orderID => {
     });
   });
 };
-
-module.exports.getOrdersProducts = orderID => {
-  return new Promise ((resolve, reject) => {
-    db.all(`SELECT  products.*
-    FROM orders, products, orders_products
-    WHERE orders.order_id = orders_products.order_id
-    AND products.product_id = orders_products.product_id
-    AND orders.order_id = ${orderID}`, (err, ordersJoined) => {
-      if (err) return reject(err);
-      resolve(ordersJoined);
-    });
-  });
-};

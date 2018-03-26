@@ -1,5 +1,6 @@
 'use strict';
 const { getAllProducts, getSingleProduct, addSingleProduct, editProduct, deleteProduct }  = require('../models/Product');
+const { getOrdersByProductId } = require('../models/Order_Product');
 
 //Get all products
 module.exports.getProducts = (req, res, next) => {
@@ -42,8 +43,17 @@ module.exports.editProductByColumn = (req, res, next) => {
   })
 };
 
-//TODO: Decide as a team how and when to delete a product
 //Delete a product
 module.exports.deleteOneProduct = (req, res, next) => {
-  console.log('deleteOneProduct called. deleteProduct function:', deleteProduct);
+ getOrdersByProduct(req.body.prodId)
+ .then(orders => {
+   console.log(orders);
+   if(orders.length > 0) {
+
+   } else {
+
+   }
+ })
+  //Delete only if order_product with given product id does NOT exist  
+  // deleteProduct(req.body.prodId);
 };

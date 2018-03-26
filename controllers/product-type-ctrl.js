@@ -40,7 +40,7 @@ module.exports.editProdTypeName = (req, res, next) => {
   .catch(err => next(err));
 }
 
-module.exports.replaceProdType = (req, res, next) => {
+module.exports.replaceOldProdType = (req, res, next) => {
   replaceProdType(req.body)
   .then(data => {
     let error = new Error('Failed to edit Product Type');

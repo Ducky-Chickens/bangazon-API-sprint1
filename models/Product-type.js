@@ -34,9 +34,9 @@ module.exports.addNewProdType = ({ name }) => {
   })
 }
 
-module.exports.editProdType = (id, { name }) => {
+module.exports.editProdType = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
-    db.run(`UPDATE product_types SET name = "${name}"
+    db.run(`UPDATE product_types SET ${column} = "${value}"
     WHERE product_type_id = ${id}
     `, function (err) {
       return err ? reject(err) : resolve({ changes: this.changes });

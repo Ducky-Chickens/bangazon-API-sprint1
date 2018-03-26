@@ -39,14 +39,16 @@ module.exports.patchComputer = (id, { column, value }) => {
       `, function (err) {
         if (err) { return reject(err) };
         resolve({changes: this.changes});
-      });
+      }
+    );
   })
 }
 
-module.exports.editComputer = ({ computer_id, purchase_date}) => {
+module.exports.editComputer = ({ computer_id, purchase_date, decomission_date}) => {
   return new Promise( (resolve, reject) => {
     db.run(`UPDATE computers SET
-    purchase_date="${purchase_date}"
+    purchase_date="${purchase_date}",
+    decomission_date="${decomission_date}"
     WHERE computer_id = ${computer_id}`, function(err, computer) {
       if (err) return reject(err);
       resolve({ id : this.changes });

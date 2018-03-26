@@ -12,6 +12,16 @@ module.exports.getAllCustomers = () => {
   });
 };
 
+module.exports.getCustsByActivity = (status) => {
+  const statusQuery = (status === "true") ? 1 : 0; 
+  return new Promise( (resolve, reject) => {
+    db.all(`SELECT * FROM customers WHERE active="${statusQuery}"`, (err, customer) => {
+      if (err) reject (err);
+      resolve(customer);
+    });
+  });
+};
+
 module.exports.getCustomer = (custID) => {
   return new Promise( (resolve, reject) => {
     db.all(`SELECT * FROM customers WHERE customer_id=${custID}`, (err, customer) => {

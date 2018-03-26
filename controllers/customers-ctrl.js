@@ -1,14 +1,17 @@
 'use strict';
 
-const { getAllCustomers, getCustomer, addCustomer, editCustomerName } = require('../models/Customers');
+const { getAllCustomers, getCustomer, addCustomer, editCustomerName, getActiveCusts } = require('../models/Customers');
+const getCustomersByQuery = require('../models/Customers');
 
-module.exports.getCustomers = (req, res, next) => {
-  getAllCustomers()
+module.exports.getCustomers = ({query: {active}}, res, next) => {
+  const filter = active ? "getCustsByActivity" : "getAllCustomers";
+  getCustomersByQuery[filter](active)
   .then(allCustomers => {
     res.status(200).json(allCustomers);
   })
   .catch(err => next(err));
 }
+
 
 module.exports.getOneCustomer = ({params: {custID}}, res, next) => {
   getCustomer(`${custID}`)
@@ -27,6 +30,7 @@ module.exports.postNewCustomer = (req, res, next) => {
     next(err);
   })
 }
+
 
 module.exports.editCustomer = (req, res, next) => {
   editCustomerName(req.body)

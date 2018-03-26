@@ -123,7 +123,6 @@ _Customers_
 
 ![Customers ERD](/ERD/customers-products_v2.png)
 
-<<<<<<< HEAD
 ###Product Types
 - GET You can access a list of all product types by running a Get call to `http://localhost:8080/product-types`
 - GET one. You can get the information on a single product type by runnning a Get call to `http://localhost:8080/product-types/{id}`
@@ -169,7 +168,6 @@ _Customers_
 - POST You can enter a new training program by running a Post call to `http://localhost:5000/programs`
   * You must put a name, startDate, endDate, and maxAttendees with a Post.
   * Example: { "name": "Learning Vim", "startDate": "02-14-2018", "endDate": "10-15-2018", "maxAttendees": 50 }
-=======
 # Departments
 _GET_: access a list of all departments by running a GET call to http://localhost:8080/departments
 - You can get the information on a single department by runnning a GET call to http://localhost:8080/departments/{departmentId}
@@ -260,4 +258,3 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
       "active": INT (0 or 1)
     }
 ```
->>>>>>> master

@@ -41,7 +41,14 @@ _GET_: access a list of all departments by running a GET call to http://localhos
   ```
 - _POST_: submit a new department by running a POST call to http://localhost:8080/departments
 - You must send a dept_name, followed by supervisor_id and budget to POST a new employee.
-- Example: { "dept_name": "[TEXT]", "supervisor_id": [INT], "budget": [INT] }
+- Example:
+```
+{
+"dept_name": "[TEXT]",
+"supervisor_id": [INT],
+"budget": [INT]
+}
+```
 # Employees
 _GET_: access a list of all employees by running a GET call to http://localhost:8080/employees
 - You can get the information on a single employee by runnning a GET call to http://localhost:8080/employees/{employeeId}
@@ -55,7 +62,15 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
   ```
 - _POST_: submit a new employee by running a POST call to http://localhost:8080/employees
 - You must send a first_name, last_name, email followed by department_id to POST a new employee.
-- Example: { "first_name": "[TEXT]", "last_name": [TEXT], "email": [TEXT] "department_id": [INT] }
+- Example: 
+```
+{
+"first_name": "[TEXT]",
+"last_name": [TEXT],
+"email": [TEXT],
+"department_id": [INT]
+}
+```
 # Third Party Libraries
 - [Express](https://expressjs.com/)
 - [Sqlite3](https://www.npmjs.com/package/sqlite3)

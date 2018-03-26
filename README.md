@@ -6,7 +6,7 @@
 - [Relationship Diagrams](#erd)
 - [Query Methods](#methods)
   - [Orders](#orders)
-  - [Payment-Types] (#payment-types)
+  - [Payment-Types] (#payments)
   - [Computers] (#computers)
   - [Product Types] (#producttypes)
   - [Training Programs] (#trainingprograms)
@@ -54,6 +54,7 @@ _Customers_
 
 <a name="methods"/>
 # Methods
+-----
 
 <a name="orders"/>
 # Orders
@@ -86,7 +87,7 @@ _Customers_
   - You must send a ORDER_DATE, followed by PAYMENT_TYPE_ID to POST a new order.
   - Example: { "order_date": "[date]", "payment_type_id": [paymentTypeId] }
 
-<a name="payment-types"/>
+<a name="payments"/>
 # Payment-Types
 -----
 - _GET_: access a list of all payment types by running a GET call to http://localhost:8080/payment-types

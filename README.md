@@ -1,20 +1,20 @@
 # Bangazon API
 
-##### Table of Contents  
-[Setup](#setup)  
-[Helper Apps](#helpers)
-[Relationship Diagrams](#erd)
-[Query Methods](#methods)
- - [Orders](#orders)
- - [Payment Types] (#paymenttypes)
- - [Computers] (#computers)
- - [Product Types] (#producttypes)
- - [Training Programs] (#trainingprograms)
- - [Departments] (#departments)
- - [Employees] (#employees) 
- - [Customers] (#customers) 
-[Libraries](#libraries)
-[Credits](#credits)
+# Table of Contents  
+- [Setup](#setup)  
+- [Helper Apps](#helpers)
+- [Relationship Diagrams](#erd)
+- [Query Methods](#methods)
+  - [Orders](#orders)
+  - [Payment-Types] (#payment-types)
+  - [Computers] (#computers)
+  - [Product Types] (#producttypes)
+  - [Training Programs] (#trainingprograms)
+  - [Departments] (#departments)
+  - [Employees] (#employees) 
+  - [Customers] (#customers) 
+- [Libraries](#libraries)
+- [Credits](#credits)
  
 
 
@@ -34,8 +34,8 @@ npm build tables
 // Run a local server to access the data in browser
 
 http-server
-
 ```
+
 <a name="helpers"/>
 # Helper Applications
 - [DB Browser for SQLite](http://sqlitebrowser.org/) to work directly with database without command line
@@ -53,8 +53,8 @@ _Customers_
 ![Customers ERD](/ERD/customers-products_v2.png)
 
 <a name="methods"/>
-### Methods
------
+# Methods
+
 <a name="orders"/>
 # Orders
 -----
@@ -86,7 +86,7 @@ _Customers_
   - You must send a ORDER_DATE, followed by PAYMENT_TYPE_ID to POST a new order.
   - Example: { "order_date": "[date]", "payment_type_id": [paymentTypeId] }
 
-<a name="paymenttypes"/>
+<a name="payment-types"/>
 # Payment-Types
 -----
 - _GET_: access a list of all payment types by running a GET call to http://localhost:8080/payment-types

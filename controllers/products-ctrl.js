@@ -45,15 +45,28 @@ module.exports.editProductByColumn = (req, res, next) => {
 
 //Delete a product
 module.exports.deleteOneProduct = (req, res, next) => {
- getOrdersByProduct(req.body.prodId)
- .then(orders => {
-   console.log(orders);
-   if(orders.length > 0) {
-
-   } else {
-
-   }
- })
-  //Delete only if order_product with given product id does NOT exist  
-  // deleteProduct(req.body.prodId);
+  //first get product by id to check if product exists
+  getSingleProduct(req.body.prodId)
+  .then(product => {
+    if(product) {
+      //Delete only if order_product with given product id does NOT exist  
+      getOrdersByProductId(req.body.prodId)
+      .then(orders => {
+        if(orders.length > 0) {
+          let error = new Error('Failed to delete, an order has been placed for this product and connot be deleted.');
+          error.status = 405;
+          next(error);
+        } else {
+          deleteProduct(req.body.prodId)
+          .then(data => {
+            res.status(200).json(data);
+          });
+        }
+      });
+    } else {
+      let error = new Error('Product not found!');
+      error.status = 404;
+      next(error);
+    }
+  })
 };

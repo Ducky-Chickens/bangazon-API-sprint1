@@ -124,7 +124,7 @@ _Customers_
   
 -----
 
-###Product Types
+# Product Types
 - GET You can access a list of all product types by running a Get call to `http://localhost:8080/product-types`
 - GET one. You can get the information on a single product type by runnning a Get call to `http://localhost:8080/product-types/{id}`
 > Note you need to have a product types unique ID number to get the correct information
@@ -147,7 +147,7 @@ _Customers_
   * You must put a name with a post.
   * Example: { "name": "Spell Books" }
 
-###Training Programs
+# Training Programs
 - GET You can access a list of all training programs by running a Get call to `http://localhost:5000/programs`
 - GET one. You can get the information on a single training program by runnning a Get call to `http://localhost:5000/programs/{id}`
 > Note you need to have a training program unique ID number to get the correct information

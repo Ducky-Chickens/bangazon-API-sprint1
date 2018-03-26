@@ -33,7 +33,7 @@ module.exports.addSingleOrder = ({order_date}) => {
   });
 };
 
-module.exports.editOrder = (id, { column, value }) => {
+module.exports.patchOrder = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id
       db.run(`UPDATE orders SET "${column}" = "${value}"

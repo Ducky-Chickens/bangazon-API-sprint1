@@ -8,7 +8,8 @@ const generateOrders = () => {
 
   for (let i = 0; i < 20; i ++) {
     let orderDate = faker.date.past();
-    orders.push({"order_date": orderDate.toLocaleDateString(), "payment_type_id": null});
+    let custId = faker.random.number({ min: 1, max: 20 });
+    orders.push({"customer_id": custId,"order_date": orderDate.toLocaleDateString(), "payment_type_id": null});
   }
 
   return { orders };

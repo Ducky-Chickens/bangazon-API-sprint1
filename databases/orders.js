@@ -12,14 +12,15 @@ module.exports.buildOrderTable = () => {
     
     db.run(`CREATE TABLE IF NOT EXISTS orders (
       order_id INTEGER PRIMARY KEY,
+      customer_id INTEGER,
       order_date TEXT NOT NULL,
       payment_type_id INTEGER,
-      FOREIGN KEY (payment_type_id) REFERENCES payment_types(payment_type_id))`
-    );
+      FOREIGN KEY (payment_type_id) REFERENCES payment_types(payment_type_id),
+      FOREIGN KEY (customer_id) REFERENCES customers(customer_id))`);
 
-    orders.forEach( ({order_date, payment_type_id, create_date}) => {
-      db.run(`INSERT INTO orders (order_date, payment_type_id)
-              VALUES ("${order_date}", ${payment_type_id})`, (err) => {
+    orders.forEach( ({customer_id, order_date, payment_type_id, create_date}) => {
+      db.run(`INSERT INTO orders (customer_id, order_date, payment_type_id)
+              VALUES ("${customer_id}","${order_date}", ${payment_type_id})`, (err) => {
                 if(err) return err;
               });
     });

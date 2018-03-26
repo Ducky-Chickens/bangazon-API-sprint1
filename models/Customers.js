@@ -42,7 +42,7 @@ module.exports.addCustomer = ({ first_name, last_name, join_date, active }) => {
   });
 };
 
-module.exports.editCustomerObj = ({ customer_id, first_name, last_name, join_date, active }) => {
+module.exports.putCustomerObj = ({ customer_id, first_name, last_name, join_date, active }) => {
   return new Promise( (resolve, reject) => {
     db.run(`UPDATE customers SET
     first_name="${first_name}",
@@ -56,3 +56,15 @@ module.exports.editCustomerObj = ({ customer_id, first_name, last_name, join_dat
     );
   });
 };
+
+module.exports.patchCustomerObj = (custID, { column, value }) => {
+  return new Promise((resolve, reject) => {
+    // update table set column where id = param id
+      db.run(`UPDATE customers SET ${column} = "${value}"
+      WHERE customer_id = ${custID}
+      `, function (err) {
+        if (err) { return reject(err) };
+        resolve({changes: this.changes});
+      });
+  })
+}

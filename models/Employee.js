@@ -42,3 +42,19 @@ module.exports.editEmployee = (id, { column, value }) => {
       });
   });
 };
+
+module.exports.editEmployeeByName = ({ employee_id, first_name, last_name, email, department_id }) => {
+  return new Promise( (resolve, reject) => {
+    db.run(`UPDATE employees SET
+    first_name="${first_name}",
+    last_name="${last_name}",
+    email="${email}",
+    department_id=${department_id}
+    WHERE employee_id = ${employee_id}`, function(err, employee) {
+      if (err) return reject(err);
+      resolve({ id : this.changes });
+      }
+    );
+  });
+};
+

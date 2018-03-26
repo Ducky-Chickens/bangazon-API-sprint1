@@ -1,4 +1,4 @@
-const { getAllPaymentTypes, getSinglePaymentType, addSinglePaymentType, editPaymentType, deletePaymentType } = require('../models/Payment-types');
+const { getAllPaymentTypes, getSinglePaymentType, addSinglePaymentType, editPaymentType, deletePaymentType } = require('../models/Payment-type');
 
 module.exports.getPaymentTypes = (req, res, next) => {
   getAllPaymentTypes()

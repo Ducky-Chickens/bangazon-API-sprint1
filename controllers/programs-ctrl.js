@@ -1,6 +1,6 @@
 'use strict'; 
 const { getAllPrograms, getOneProgram, addNewProgram, 
-  editProgram, removeProgram } = require('../models/Training-programs');
+  editProgram, removeProgram } = require('../models/Training-program');
 
 module.exports.getPrograms = (req, res, next) => {
   getAllPrograms()

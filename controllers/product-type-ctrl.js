@@ -1,6 +1,6 @@
 'use strict'; 
 const { getAllProdTypes, getOneProdType, addNewProdType, 
-  editProdType, removeProdType } = require('../models/Product-types');
+  editProdType, removeProdType } = require('../models/Product-type');
 
 module.exports.getProductTypes = (req, res, next) => {
   getAllProdTypes()

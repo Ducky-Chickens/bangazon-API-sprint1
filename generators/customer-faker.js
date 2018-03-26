@@ -10,10 +10,12 @@ const generateCustomers = () => {
     let last_name = faker.name.lastName();
     let random_date = faker.date.past(10);
     let create_date = random_date.toISOString().slice(0,10);
+    let active = 0
     customers.push({
       first_name,
       last_name,
-      create_date
+      create_date,
+      active
     });
   }
     return { customers };

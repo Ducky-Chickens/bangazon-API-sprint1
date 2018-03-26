@@ -12,12 +12,13 @@ module.exports.buildCustomerTable = () => {
       customer_id INTEGER PRIMARY KEY,
       first_name TEXT NOT NULL,
       last_name TEXT NOT NULL,
-      join_date TEXT NOT NULL)`
+      join_date TEXT NOT NULL,
+      active INTEGER)`
     );
 
-    customers.forEach( ({first_name, last_name, create_date}) => {
-      db.run(`INSERT INTO customers (first_name, last_name, join_date)
-              VALUES ("${first_name}", "${last_name}", "${create_date}")`, (err) => {
+    customers.forEach(({ first_name, last_name, create_date, active}) => {
+      db.run(`INSERT INTO customers
+              VALUES (null, "${first_name}", "${last_name}", "${create_date}", ${active})`, (err) => {
                 if(err) return err;
               });
     });

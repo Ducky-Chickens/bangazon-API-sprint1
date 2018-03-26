@@ -5,7 +5,7 @@ const { getComputers, getOneComputer, postNewComputer, editComputerByColumn, del
 compRouter.get('/computers', getComputers);
 compRouter.post('/computers', postNewComputer);
 compRouter.delete('/computers', deleteOneComputer);
-compRouter.put('./computers', replaceComputer)
+compRouter.put('/computers', replaceComputer)
 compRouter.get('/computers/:compId', getOneComputer);
 compRouter.patch('/computers/:compId', editComputerByColumn);
 

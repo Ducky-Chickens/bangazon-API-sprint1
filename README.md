@@ -27,24 +27,38 @@ http-server
 # Departments
 http methods supported: GET, POST, PUT example body:
 
+###PUT
 ```
 {
-	"department_id": "INT: include on PUT only",
-	"supervisor_id": "INT",
-	"budget": "INT: NOT NULL",
-	"dept_name": "TEXT: NOT NULL"
+	"column": "choose column",
+	"value": "choose value"
+}
+```
+###POST
+```
+{
+	"supervisor_id": INT,
+	"dept_name": "TEXT,
+	"budget": INT
 }
 ```
 # Employees
 http methods supported: GET, POST, PUT example body:
 
+###PUT
 ```
 {
-	"employee_id": "INT: include on PUT only",
-	"first_name": "TEXT",
-	"last_name": "TEXT",
-	"email": "TEXT",
-  "department_id": "INT"
+	"column": "choose column",
+	"value": "choose value"
+}
+```
+###POST
+```
+{
+	"first_name": TEXT,
+	"last_name": "TEXT,
+	"email": TEXT,
+	"department_id": INT
 }
 ```
 # Third Party Libraries

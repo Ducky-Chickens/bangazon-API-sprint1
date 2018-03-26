@@ -21,6 +21,16 @@ http-server
 - [DB Browser for SQLite](http://sqlitebrowser.org/) to work directly with database without command line
 - [Postman](https://www.getpostman.com/) to use PUT/POST/DELETE http methods
 
+# Entity Relationship Diagrams
+
+_Employees_
+
+![Employees ERD](/ERD/employees-better.png)
+
+_Customers_
+
+![Customers ERD](/ERD/customers-products_v2.png)
+
 
 # Orders
 -----
@@ -53,7 +63,7 @@ http-server
   - Example: { "order_date": "[date]", "payment_type_id": [paymentTypeId] }
 
 # Payment-Types
------
+
 - _GET_: access a list of all payment types by running a GET call to http://localhost:8080/payment-types
   - You can get the information on a single computer by runnning a GET call to http://localhost:8080/payment-types/{paymentTypeID}
   > Note you need to have the unique ID number
@@ -113,18 +123,7 @@ http-server
   - Example: { "purchase_date": "YYYY/DD/MM" }
   
 -----
-# Entity Relationship Diagrams
 
-_Employees_
-
-![Employees ERD](/ERD/employees-better.png)
-
-_Customers_
-
-![Customers ERD](/ERD/customers-products_v2.png)
-
-<<<<<<< HEAD
-=======
 # Departments
 _GET_: access a list of all departments by running a GET call to http://localhost:8080/departments
 - You can get the information on a single department by runnning a GET call to http://localhost:8080/departments/{departmentId}
@@ -169,7 +168,9 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 }
 ```
 
-### Customers
+
+# Customers
+
 
 * GET You can access a list of all customers by running a Get call to `http://localhost:8080/api/customers`
 * GET one. You can get the information on a single customer by running a Get call to http://localhost:8080/api/customers/{customerID}.
@@ -186,7 +187,7 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
       "create_date": "2018-03-05",
       "active": INT (0 or 1)
     }
-<<<<<<< HEAD
+
 ```
 * POST To add a new customer, post to `http://localhost:8080/api/customers`.
         *To add a new customer,the below is required:
@@ -198,6 +199,7 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
       "active": INT (0 or 1)
     }
 ```
+
 * PATCH To edit an existing customer column, patch to `http://localhost:8080/api/customers/${CUSTOMERID}`.
         *The below format is required for patching:
  ```
@@ -214,9 +216,10 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
       "last_name": "TEXT",
       "create_date": "2018-03-05",
       "active": INT (0 or 1)
->>>>>>> master
+
     }
 ```
+
 
 # Third Party Libraries
 - [Express](https://expressjs.com/)
@@ -236,5 +239,5 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 - [Valerie Freeman](https://github.com/Valerie-Freeman)
 - [Hunter Phillips](https://github.com/hunterphillips)
 - [Eli WIlson](https://github.com/e-x-wilson)
->>>>>>> master
+
 

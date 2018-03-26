@@ -1,4 +1,5 @@
-const { getAllOrders, getSingleOrder, deleteOrder, addSingleOrder, patchOrder, editOrder, getOrdersProducts } = require('../models/Order');
+const { getAllOrders, getSingleOrder, deleteOrder, addSingleOrder, editOrder} = require('../models/Order');
+const { getProductsByOrderId } = require('../models/Order_product');
 
 module.exports.getOrders = (req, res, next) => {
   getAllOrders()
@@ -11,7 +12,7 @@ module.exports.getOrders = (req, res, next) => {
 module.exports.getOneOrder = ({params: {orderId}}, res, next) => {
   getSingleOrder(orderId)
   .then( order => 
-    getOrdersProducts(orderId)
+    getProductsByOrderId(orderId)
     .then( arrayProducts => {
       let joinedOrderProducts = { order };
       joinedOrderProducts.order.products = arrayProducts

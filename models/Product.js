@@ -49,12 +49,12 @@ module.exports.editProduct = (id, { column, value }) => {
 };
 
 //Delete a product
-module.exports.deleteProduct = (prodID) => {
+module.exports.deleteProduct = (prodId) => {
   return new Promise ((resolve, reject) => {
-    db.run(`DELETE FROM products WHERE product_id=${prodID}`, 
+    db.run(`DELETE FROM products WHERE product_id=${prodId}`, 
     function(err, product) {
       if (err) return reject(err);
-      resolve({changes: this.product});
+      resolve({ status: `${this.changes} item deleted`});
     });
   });
 };

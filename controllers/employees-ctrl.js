@@ -1,4 +1,4 @@
-const { getAllEmployees, getOneEmployee, addSingleEmployee, editEmployee } = require('../models/Employee');
+const { getAllEmployees, getOneEmployee, addSingleEmployee, editEmployee, editEmployeeByName } = require('../models/Employee');
 
 module.exports.getEmployees = (req, res, next) => {
   getAllEmployees()
@@ -34,6 +34,19 @@ module.exports.postNewEmployee = (req, res, next) => {
 
 module.exports.editEmployeeByColumn = (req, res, next) => {
   editEmployee(req.params.employeeId, req.body)
+  .then(emp => {
+    if(emp){
+      res.status(200).json(emp);
+    } else {
+      let error = new Error('Failed to edit Employee');
+      error.status = 500;
+      next(error);
+    };
+  });
+};
+
+module.exports.editEmployeeForPut = (req, res, next) => {
+  editEmployeeByName(req.body)
   .then(emp => {
     if(emp){
       res.status(200).json(emp);

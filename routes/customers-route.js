@@ -4,7 +4,7 @@ const { getCustomers, getOneCustomer, postNewCustomer, editCustomer } = require(
 
 custRouter.get('/customers', getCustomers);
 custRouter.get('/customers/:custID', getOneCustomer);
-custRouter.post('/customers/', postNewCustomer);
-custRouter.put("/customers/", editCustomer);
+custRouter.post('/customers', postNewCustomer);
+custRouter.put("/customers", editCustomer);
 
 module.exports = custRouter;

@@ -1,7 +1,7 @@
 'use strict';
 
-const { getCustomer, addCustomer, putCustomerObj, patchCustomerObj } = require('../models/Customers');
-const getCustomersByQuery = require('../models/Customers');
+const { getCustomer, addCustomer, putCustomerObj, patchCustomerObj } = require('../models/Customer');
+const getCustomersByQuery = require('../models/Customer');
 
 module.exports.getCustomers = ({query: {active}}, res, next) => {
   const filter = active ? "getCustsByActivity" : "getAllCustomers";

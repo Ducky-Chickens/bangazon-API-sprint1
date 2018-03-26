@@ -34,7 +34,7 @@ module.exports.addSinglePaymentType = ({type, account_number, customer_id}) => {
   });
 };
 
-module.exports.editPaymentType = (id, { column, value }) => {
+module.exports.patchPaymentType = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id
       db.run(`UPDATE payment_types SET "${column}" = "${value}"
@@ -45,6 +45,20 @@ module.exports.editPaymentType = (id, { column, value }) => {
       });
   })
 }
+
+module.exports.editPaymentType = ({ payment_type_id, type, account_number, customer_id}) => {
+  return new Promise( (resolve, reject) => {
+    db.run(`UPDATE payment_types SET
+    type="${type}",
+    account_number="${account_number}",
+    customer_id="${customer_id}"
+    WHERE payment_type_id = ${payment_type_id}`, function(err, paymentType) {
+      if (err) return reject(err);
+      resolve({ "You changed the following number of payment types" : this.changes });
+      }
+    );
+  });
+};
 
 module.exports.deletePaymentType = payTypeID => {
   return new Promise ((resolve, reject) => {

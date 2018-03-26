@@ -42,3 +42,17 @@ module.exports.editDepartment = (id, { column, value }) => {
       });
   });
 };
+
+module.exports.editDepartmentName = ({ department_id, dept_name, supervisor_id, budget }) => {
+  return new Promise( (resolve, reject) => {
+    db.run(`UPDATE departments SET
+    dept_name="${dept_name}",
+    budget=${budget}
+    WHERE department_id = ${department_id}`, function(err, department) {
+      if (err) return reject(err);
+      resolve({ id : this.changes });
+      }
+    );
+  });
+};
+

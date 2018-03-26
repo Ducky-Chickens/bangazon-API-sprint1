@@ -51,7 +51,7 @@ module.exports.putCustomerObj = ({ customer_id, first_name, last_name, join_date
     active="${active}"
     WHERE customer_id = ${customer_id}`, function(err, computer) {
       if (err) return reject(err);
-      resolve({ id : this.changes });
+      resolve({ numberOfChanges : this.changes });
       }
     );
   });

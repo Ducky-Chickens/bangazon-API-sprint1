@@ -31,7 +31,7 @@ module.exports.addSingleComputer = ({purchaseDate}) => {
   });
 };
 
-module.exports.editComputer = (id, { column, value }) => {
+module.exports.patchComputer = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id
       db.run(`UPDATE computers SET "${column}" = "${value}"
@@ -39,9 +39,23 @@ module.exports.editComputer = (id, { column, value }) => {
       `, function (err) {
         if (err) { return reject(err) };
         resolve({changes: this.changes});
-      });
+      }
+    );
   })
 }
+
+module.exports.editComputer = ({ computer_id, purchase_date, decomission_date}) => {
+  return new Promise( (resolve, reject) => {
+    db.run(`UPDATE computers SET
+    purchase_date="${purchase_date}",
+    decomission_date="${decomission_date}"
+    WHERE computer_id = ${computer_id}`, function(err, computer) {
+      if (err) return reject(err);
+      resolve({ id : this.changes });
+      }
+    );
+  });
+};
 
 module.exports.deleteComputer = compID => {
   return new Promise ((resolve, reject) => {

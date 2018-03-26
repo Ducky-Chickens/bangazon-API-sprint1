@@ -16,6 +16,10 @@ npm build tables
 http-server
 
 ```
+# Helper Applications
+- [DB Browser for SQLite](http://sqlitebrowser.org/) to work directly with database without command line
+- [Postman](https://www.getpostman.com/) to use PUT/POST/DELETE http methods
+
 
 # Employees ERD
 

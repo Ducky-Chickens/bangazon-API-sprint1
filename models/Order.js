@@ -33,7 +33,7 @@ module.exports.addSingleOrder = ({order_date}) => {
   });
 };
 
-module.exports.editOrder = (id, { column, value }) => {
+module.exports.patchOrder = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id
       db.run(`UPDATE orders SET "${column}" = "${value}"
@@ -41,9 +41,22 @@ module.exports.editOrder = (id, { column, value }) => {
       `, function (err) {
         if (err) { return reject(err) };
         resolve({changes: this.changes});
-      });
-  })
-}
+    });
+  });
+};
+
+module.exports.editOrder = ({ order_id, customer_id, order_date}) => {
+  return new Promise( (resolve, reject) => {
+    db.run(`UPDATE orders SET
+    customer_id="${customer_id}",
+    order_date="${order_date}"
+    WHERE order_id = ${order_id}`, function(err, order) {
+      if (err) return reject(err);
+      resolve({ id : this.changes });
+      }
+    );
+  });
+};
 
 module.exports.deleteOrder = orderID => {
   return new Promise ((resolve, reject) => {

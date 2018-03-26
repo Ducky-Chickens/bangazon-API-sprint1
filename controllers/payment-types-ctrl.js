@@ -1,4 +1,4 @@
-const { getAllPaymentTypes, getSinglePaymentType, addSinglePaymentType, editPaymentType, deletePaymentType } = require('../models/Payment-type');
+const { getAllPaymentTypes, getSinglePaymentType, addSinglePaymentType, editPaymentType, deletePaymentType, patchPaymentType } = require('../models/Payment-type');
 
 module.exports.getPaymentTypes = (req, res, next) => {
   getAllPaymentTypes()
@@ -30,7 +30,7 @@ module.exports.postNewPaymentType = (req, res, next) => {
 }
 
 module.exports.editPaymentTypeByColumn = (req, res, next) => {
-  editPaymentType(req.params.payTypeId, req.body)
+  patchPaymentType(req.params.payTypeId, req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);
@@ -41,6 +41,19 @@ module.exports.editPaymentTypeByColumn = (req, res, next) => {
     }
   })
 }
+
+module.exports.replacePaymentType = (req, res, next) => {
+  editPaymentType(req.body)
+  .then(data => {
+    if(data){
+      res.status(200).json(data);
+    } else {
+      let error = new Error('Failed to replace payment type');
+      error.status = 500;
+      next(error);
+    }
+  })
+};
 
 module.exports.deleteOnePaymentType = (req, res, next) => {
   deletePaymentType(req.body.payment_type_id)

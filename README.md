@@ -21,6 +21,16 @@ http-server
 - [DB Browser for SQLite](http://sqlitebrowser.org/) to work directly with database without command line
 - [Postman](https://www.getpostman.com/) to use PUT/POST/DELETE http methods
 
+# Entity Relationship Diagrams
+
+_Employees_
+
+![Employees ERD](/ERD/employees-better.png)
+
+_Customers_
+
+![Customers ERD](/ERD/customers-products_v2.png)
+
 
 # Orders
 -----
@@ -113,15 +123,6 @@ http-server
   - Example: { "purchase_date": "YYYY/DD/MM" }
   
 -----
-# Entity Relationship Diagrams
-
-_Employees_
-
-![Employees ERD](/ERD/employees-better.png)
-
-_Customers_
-
-![Customers ERD](/ERD/customers-products_v2.png)
 
 # Departments
 _GET_: access a list of all departments by running a GET call to http://localhost:8080/departments
@@ -166,24 +167,6 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 "department_id": [INT]
 }
 ```
-# Third Party Libraries
-- [Express](https://expressjs.com/)
-- [Sqlite3](https://www.npmjs.com/package/sqlite3)
-- [Nodemon](https://www.npmjs.com/package/nodemon)
-- [Dotenv](https://www.npmjs.com/package/dotenv)
-- [Body-parser](https://www.npmjs.com/package/body-parser-json)
-
-# Credits
-
-## Project Manager
-- [Emily Lemmon](https://github.com/Rian501)
-
-## API Developers
-- [David Hazlett](https://github.com/dhazlettjr)
-- [Melissa Bell](https://github.com/melissabell456)
-- [Valerie Freeman](https://github.com/Valerie-Freeman)
-- [Hunter Phillips](https://github.com/hunterphillips)
-- [Eli WIlson](https://github.com/e-x-wilson)
 
 ### Customers
 
@@ -213,3 +196,23 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
       "active": INT (0 or 1)
     }
 ```
+
+# Third Party Libraries
+- [Express](https://expressjs.com/)
+- [Sqlite3](https://www.npmjs.com/package/sqlite3)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
+- [Body-parser](https://www.npmjs.com/package/body-parser-json)
+
+# Credits
+
+## Project Manager
+- [Emily Lemmon](https://github.com/Rian501)
+
+## API Developers
+- [David Hazlett](https://github.com/dhazlettjr)
+- [Melissa Bell](https://github.com/melissabell456)
+- [Valerie Freeman](https://github.com/Valerie-Freeman)
+- [Hunter Phillips](https://github.com/hunterphillips)
+- [Eli WIlson](https://github.com/e-x-wilson)
+

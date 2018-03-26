@@ -1,5 +1,24 @@
 # Bangazon API
 
+##### Table of Contents  
+[Setup](#setup)  
+[Helper Apps](#helpers)
+[Relationship Diagrams](#erd)
+[Query Methods](#methods)
+ - [Orders](#orders)
+ - [Payment Types] (#paymenttypes)
+ - [Computers] (#computers)
+ - [Product Types] (#producttypes)
+ - [Training Programs] (#trainingprograms)
+ - [Departments] (#departments)
+ - [Employees] (#employees) 
+ - [Customers] (#customers) 
+[Libraries](#libraries)
+[Credits](#credits)
+ 
+
+
+<a name="setup"/>
 # Basic Project Setup
 
 
@@ -17,10 +36,12 @@ npm build tables
 http-server
 
 ```
+<a name="helpers"/>
 # Helper Applications
 - [DB Browser for SQLite](http://sqlitebrowser.org/) to work directly with database without command line
 - [Postman](https://www.getpostman.com/) to use PUT/POST/DELETE http methods
 
+<a name="erd"/>
 # Entity Relationship Diagrams
 
 _Employees_
@@ -31,7 +52,10 @@ _Customers_
 
 ![Customers ERD](/ERD/customers-products_v2.png)
 
-
+<a name="methods"/>
+### Methods
+-----
+<a name="orders"/>
 # Orders
 -----
 - _GET_: access a list of all orders by running a GET call to http://localhost:8080/orders
@@ -62,8 +86,9 @@ _Customers_
   - You must send a ORDER_DATE, followed by PAYMENT_TYPE_ID to POST a new order.
   - Example: { "order_date": "[date]", "payment_type_id": [paymentTypeId] }
 
+<a name="paymenttypes"/>
 # Payment-Types
-
+-----
 - _GET_: access a list of all payment types by running a GET call to http://localhost:8080/payment-types
   - You can get the information on a single computer by runnning a GET call to http://localhost:8080/payment-types/{paymentTypeID}
   > Note you need to have the unique ID number
@@ -92,7 +117,8 @@ _Customers_
   - You must send a TYPE and ACCOUNT_NUMBER to POST a new payment type.
   - Example: { "type": "Visa", "account_number": 481637138 }
 
-# Computer
+<a name="computers"/>
+# Computers
 -----
 - _GET_: access a list of all computers by running a GET call to http://localhost:8080/computers
   - You can get the information on a single computer by runnning a GET call to http://localhost:8080/computers/{computerID}
@@ -124,6 +150,7 @@ _Customers_
   
 -----
 
+<a name="producttypes"/>
 # Product Types
 - GET You can access a list of all product types by running a Get call to `http://localhost:8080/product-types`
 - GET one. You can get the information on a single product type by runnning a Get call to `http://localhost:8080/product-types/{id}`
@@ -147,6 +174,7 @@ _Customers_
   * You must put a name with a post.
   * Example: { "name": "Spell Books" }
 
+<a name="trainingprograms"/>
 # Training Programs
 - GET You can access a list of all training programs by running a Get call to `http://localhost:5000/programs`
 - GET one. You can get the information on a single training program by runnning a Get call to `http://localhost:5000/programs/{id}`
@@ -169,7 +197,11 @@ _Customers_
 - POST You can enter a new training program by running a Post call to `http://localhost:5000/programs`
   * You must put a name, startDate, endDate, and maxAttendees with a Post.
   * Example: { "name": "Learning Vim", "startDate": "02-14-2018", "endDate": "10-15-2018", "maxAttendees": 50 }
+
+
+<a name="departments"/>
 # Departments
+-----
 _GET_: access a list of all departments by running a GET call to http://localhost:8080/departments
 - You can get the information on a single department by runnning a GET call to http://localhost:8080/departments/{departmentId}
 > Note you need to have the unique ID number
@@ -190,7 +222,10 @@ _GET_: access a list of all departments by running a GET call to http://localhos
 "budget": [INT]
 }
 ```
+
+<a name="employees"/>
 # Employees
+-----
 _GET_: access a list of all employees by running a GET call to http://localhost:8080/employees
 - You can get the information on a single employee by runnning a GET call to http://localhost:8080/employees/{employeeId}
 > Note you need to have the unique ID number
@@ -213,10 +248,9 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 }
 ```
 
-
+<a name="customers"/>
 # Customers
-
-
+-----
 * GET You can access a list of all customers by running a Get call to `http://localhost:8080/api/customers`
 * GET one. You can get the information on a single customer by running a Get call to http://localhost:8080/api/customers/{customerID}.
 >Note you need to have a customers unique ID number to get the correct information
@@ -251,7 +285,7 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
     {
       "column": "COLUMNNAME",
       "value": "NEWVALUE"
-=======
+    }
 ```
 * POST To add a new customer, post to `http://localhost:8080/api/customers`.
         *To add a new customer,the below is required:
@@ -265,7 +299,7 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
     }
 ```
 
-
+<a name="libraries"/>
 # Third Party Libraries
 - [Express](https://expressjs.com/)
 - [Sqlite3](https://www.npmjs.com/package/sqlite3)
@@ -273,6 +307,7 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Body-parser](https://www.npmjs.com/package/body-parser-json)
 
+<a name="credits"/>
 # Credits
 
 ## Project Manager

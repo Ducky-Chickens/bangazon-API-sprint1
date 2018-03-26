@@ -1,6 +1,6 @@
 'use strict'; 
 const { getAllProdTypes, getOneProdType, addNewProdType, 
-  editProdType, removeProdType } = require('../models/Product-type');
+  editProdType, removeProdType, replaceProdType } = require('../models/Product-type');
 
 module.exports.getProductTypes = (req, res, next) => {
   getAllProdTypes()
@@ -32,6 +32,16 @@ module.exports.addProductType = (req, res, next) => {
 
 module.exports.editProdTypeName = (req, res, next) => {
   editProdType(req.params.id, req.body)
+  .then(data => {
+    let error = new Error('Failed to edit Product Type');
+    error.status = 500;
+    return data ? res.status(200).json(data) : next(error);    
+  })
+  .catch(err => next(err));
+}
+
+module.exports.replaceOldProdType = (req, res, next) => {
+  replaceProdType(req.body)
   .then(data => {
     let error = new Error('Failed to edit Product Type');
     error.status = 500;

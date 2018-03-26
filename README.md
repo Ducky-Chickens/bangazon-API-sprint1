@@ -21,6 +21,16 @@ http-server
 - [DB Browser for SQLite](http://sqlitebrowser.org/) to work directly with database without command line
 - [Postman](https://www.getpostman.com/) to use PUT/POST/DELETE http methods
 
+# Entity Relationship Diagrams
+
+_Employees_
+
+![Employees ERD](/ERD/employees-better.png)
+
+_Customers_
+
+![Customers ERD](/ERD/customers-products_v2.png)
+
 
 # Orders
 -----
@@ -53,7 +63,7 @@ http-server
   - Example: { "order_date": "[date]", "payment_type_id": [paymentTypeId] }
 
 # Payment-Types
------
+
 - _GET_: access a list of all payment types by running a GET call to http://localhost:8080/payment-types
   - You can get the information on a single computer by runnning a GET call to http://localhost:8080/payment-types/{paymentTypeID}
   > Note you need to have the unique ID number
@@ -113,16 +123,52 @@ http-server
   - Example: { "purchase_date": "YYYY/DD/MM" }
   
 -----
-# Entity Relationship Diagrams
 
-_Employees_
+# Product Types
+- GET You can access a list of all product types by running a Get call to `http://localhost:8080/product-types`
+- GET one. You can get the information on a single product type by runnning a Get call to `http://localhost:8080/product-types/{id}`
+> Note you need to have a product types unique ID number to get the correct information
 
-![Employees ERD](/ERD/employees-better.png)
+- PUT You can update a whole product type by running a Put call to `http://localhost:8080/product-types`
 
-_Customers_
+  * Running a put requires that you submit the entire object.
+  * Example: { "id": 1, "name": "Wand" }
 
-![Customers ERD](/ERD/customers-products_v2.png)
+- PATCH You can update specific info on a product type by running a Patch call to `http://localhost:8080/product-types/{id}`
 
+  * Running a patch requires that you submit the desired column and value.
+  * Example: { "column": "name", "value": "sports" }
+
+- DELETE You can delete a product type by running a Delete call to `http://localhost:8080/product-types`
+  * Submit the target id, Example: { "id": 2 }
+
+- POST You can enter a new product type by running a Post call to `http://localhost:8080/product-types`
+
+  * You must put a name with a post.
+  * Example: { "name": "Spell Books" }
+
+# Training Programs
+- GET You can access a list of all training programs by running a Get call to `http://localhost:5000/programs`
+- GET one. You can get the information on a single training program by runnning a Get call to `http://localhost:5000/programs/{id}`
+> Note you need to have a training program unique ID number to get the correct information
+
+- PUT You can update a training program by running a Put call to `http://localhost:5000/programs`
+
+  * Running a Put requires that you submit the entire object.
+  * Example: { "id": 1 "startDate": "02-14-2018", "endDate": "02-15-2018", "maxAttendees": 50 }
+
+- PATCH You can update specific info on a training program by running a Patch call to `http://localhost:8080/product-types/{id}`
+
+  * Running a patch requires that you submit the desired column and value.
+  * Example: { "column": "title", "value": "Sales" }
+
+- DELETE You can delete a training program by running a Delete call to `http://localhost:5000/programs/{id}`
+
+> Note - you can only delete a training program if the current date is before the start date of a program. You cannot delete programs that have already started.
+
+- POST You can enter a new training program by running a Post call to `http://localhost:5000/programs`
+  * You must put a name, startDate, endDate, and maxAttendees with a Post.
+  * Example: { "name": "Learning Vim", "startDate": "02-14-2018", "endDate": "10-15-2018", "maxAttendees": 50 }
 # Departments
 _GET_: access a list of all departments by running a GET call to http://localhost:8080/departments
 - You can get the information on a single department by runnning a GET call to http://localhost:8080/departments/{departmentId}
@@ -166,6 +212,60 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 "department_id": [INT]
 }
 ```
+
+
+# Customers
+
+
+* GET You can access a list of all customers by running a Get call to `http://localhost:8080/api/customers`
+* GET one. You can get the information on a single customer by running a Get call to http://localhost:8080/api/customers/{customerID}.
+>Note you need to have a customers unique ID number to get the correct information
+* GET all customers that are active by running Get `http://localhost:8080/api/customers/?active=true`
+* GET all customers that are not active by running Get `http://localhost:8080/api/customers/?active=false` 
+* PUT You can update the info on a specific customer by running a Put call to `http://localhost:8080/api/customers/`
+        *You must Put the entire changed object, which will include the below:
+```
+    {
+      "customer_id": INT,
+      "first_name": "TEXT",
+      "last_name": "TEXT",
+      "create_date": "2018-03-05",
+      "active": INT (0 or 1)
+    }
+
+```
+* POST To add a new customer, post to `http://localhost:8080/api/customers`.
+        *To add a new customer,the below is required:
+ ```
+    {
+      "first_name": "TEXT",
+      "last_name": "TEXT",
+      "create_date": "2018-03-05",
+      "active": INT (0 or 1)
+    }
+```
+
+* PATCH To edit an existing customer column, patch to `http://localhost:8080/api/customers/${CUSTOMERID}`.
+        *The below format is required for patching:
+ ```
+    {
+      "column": "COLUMNNAME",
+      "value": "NEWVALUE"
+=======
+```
+* POST To add a new customer, post to `http://localhost:8080/api/customers`.
+        *To add a new customer,the below is required:
+ ```
+    {
+      "first_name": "TEXT",
+      "last_name": "TEXT",
+      "create_date": "2018-03-05",
+      "active": INT (0 or 1)
+
+    }
+```
+
+
 # Third Party Libraries
 - [Express](https://expressjs.com/)
 - [Sqlite3](https://www.npmjs.com/package/sqlite3)
@@ -185,31 +285,4 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 - [Hunter Phillips](https://github.com/hunterphillips)
 - [Eli WIlson](https://github.com/e-x-wilson)
 
-### Customers
 
-* GET You can access a list of all customers by running a Get call to `http://localhost:8080/api/customers`
-* GET one. You can get the information on a single customer by running a Get call to http://localhost:8080/api/customers/{customerID}.
->Note you need to have a customers unique ID number to get the correct information
-* GET all customers that are active by running Get `http://localhost:8080/api/customers/?active=true`
-* GET all customers that are not active by running Get `http://localhost:8080/api/customers/?active=false` 
-* PUT You can update the info on a specific customer by running a Put call to `http://localhost:8080/api/customers/`
-        *You must Put the entire changed object, which will include the below:
-```
-    {
-      "customer_id": INT,
-      "first_name": "TEXT",
-      "last_name": "TEXT",
-      "create_date": "2018-03-05",
-      "active": INT (0 or 1)
-    }
-```
-* POST To add a new customer, post to `http://localhost:8080/api/customers`.
-        *To add a new customer,the below is required:
- ```
-    {
-      "first_name": "TEXT",
-      "last_name": "TEXT",
-      "create_date": "2018-03-05",
-      "active": INT (0 or 1)
-    }
-```

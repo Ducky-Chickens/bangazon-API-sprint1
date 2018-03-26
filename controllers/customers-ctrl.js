@@ -1,7 +1,7 @@
 'use strict';
 
-const { getCustomer, addCustomer, editCustomerObj } = require('../models/Customers');
-const getCustomersByQuery = require('../models/Customers');
+const { getCustomer, addCustomer, putCustomerObj, patchCustomerObj } = require('../models/Customer');
+const getCustomersByQuery = require('../models/Customer');
 
 module.exports.getCustomers = ({query: {active}}, res, next) => {
   const filter = active ? "getCustsByActivity" : "getAllCustomers";
@@ -32,8 +32,21 @@ module.exports.postNewCustomer = (req, res, next) => {
 }
 
 
-module.exports.editCustomer = (req, res, next) => {
-  editCustomerObj(req.body)
+module.exports.putCustomerData = (req, res, next) => {
+  putCustomerObj(req.body)
+  .then(data => {
+    if(data){
+      res.status(200).json(data);
+    } else {
+      let error = new Error('Failed to edit Customer');
+      error.status = 500;
+      next(error);
+    }
+  })
+}
+
+module.exports.patchCustomerData = (req, res, next) => {
+  patchCustomerObj(req.params.custID, req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);

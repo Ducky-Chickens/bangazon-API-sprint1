@@ -177,21 +177,21 @@ _GET_: access a list of all departments by running a GET call to http://localhos
 - Running a PUT requires that you submit the desired column and value to be edited. 
 - Example: 
  ```
- { "column": "dept_name", 
-  "value": "HR" }
-  ```
- - _PATCH_: update the info on a specific deparmtnet by running a PATCH call to http://localhost:8080/departments/{departmentID}
-
-Running a PATCH requires that you submit the desired column and value to be edited.
-Example:
-
-```
 {
 "dept_name": "[TEXT]",
 "supervisor_id": [INT],
 "budget": [INT]
 }
 ```
+ - _PATCH_: update the info on a specific deparmtnet by running a PATCH call to http://localhost:8080/departments/{departmentID}
+
+Running a PATCH requires that you submit the desired column and value to be edited.
+Example:
+
+ ```
+ { "column": "dept_name", 
+  "value": "HR" 
+  ```
 
 - _POST_: submit a new department by running a POST call to http://localhost:8080/departments
 - You must send a dept_name, followed by supervisor_id and budget to POST a new employee.

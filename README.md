@@ -52,11 +52,11 @@ _Customers_
 
 # Orders
 -----
-- _GET_: access a list of all orders by running a GET call to http://localhost:8080/orders
-  - You can get the information on a single computer by runnning a GET call to http://localhost:8080/orders/{orderID}
+- _GET_: access a list of all orders by running a GET call to http://localhost:8080/api/orders
+  - You can get the information on a single computer by runnning a GET call to http://localhost:8080/api/orders/{orderID}
   > Note you need to have the unique ID number
 
-- _PATCH_: update the info on a specific order by running a PATCH call to http://localhost:8080/orders/{orderID}
+- _PATCH_: update the info on a specific order by running a PATCH call to http://localhost:8080/api/orders/{orderID}
 
   - Running a PATCH requires that you submit the desired column and value to be edited.
   - Example: 
@@ -83,11 +83,11 @@ _Customers_
 
 # Payment-Types
 -----
-- _GET_: access a list of all payment types by running a GET call to http://localhost:8080/payment-types
-  - You can get the information on a single computer by runnning a GET call to http://localhost:8080/payment-types/{paymentTypeID}
+- _GET_: access a list of all payment types by running a GET call to http://localhost:8080/api/payment-types
+  - You can get the information on a single computer by runnning a GET call to http://localhost:8080/api/payment-types/{paymentTypeID}
   > Note you need to have the unique ID number
 
-- _PATCH_: update the info on a specific payment type by running a PATCH call to http://localhost:8080/payment-types/{payTypeID}
+- _PATCH_: update the info on a specific payment type by running a PATCH call to http://localhost:8080/api/payment-types/{payTypeID}
 
   - Running a PATCH requires that you submit the desired column and value to be edited.
   - Example: 
@@ -96,28 +96,28 @@ _Customers_
   "value": "481637138" }
   ```
 
-- _PUT_: replace an entire order object by sending all a payment types properties starting with the payment_type_id of the order to be replaced to http://localhost:8080/payment-types:
+- _PUT_: replace an entire order object by sending all a payment types properties starting with the payment_type_id of the order to be replaced to http://localhost:8080/api/payment-types:
   ```
   { "payment_type_id": [orderId#], "type": "[account type name]", "account_number": [accountId#] "customer_id": [customerId#] }
   ```
 
-- _DELETE_: delete a payment type by running a DELETE call to http://localhost:8080/payment-types and sending:
+- _DELETE_: delete a payment type by running a DELETE call to http://localhost:8080/api/payment-types and sending:
   ```
   { "payment_type_id": [payTypeId#] }
   ```
 
-- _POST_: submit a new computer by running a POST call to http://localhost:8080/computers
+- _POST_: submit a new computer by running a POST call to http://localhost:8080/api/computers
 
   - You must send a TYPE and ACCOUNT_NUMBER to POST a new payment type.
   - Example: { "type": "Visa", "account_number": 481637138 }
 
 # Computers
 -----
-- _GET_: access a list of all computers by running a GET call to http://localhost:8080/computers
-  - You can get the information on a single computer by runnning a GET call to http://localhost:8080/computers/{computerID}
+- _GET_: access a list of all computers by running a GET call to http://localhost:8080/api/computers
+  - You can get the information on a single computer by runnning a GET call to http://localhost:8080/api/computers/{computerID}
   > Note you need to have a computer unique ID number to receive information
 
-- _PATCH_: update the info on a specific computer by running a PATCH call to http://localhost:8080/computers/{computerID}
+- _PATCH_: update the info on a specific computer by running a PATCH call to http://localhost:8080/api/computers/{computerID}
 
   - Running a PATCH requires that you submit the desired column and value to be edited.
   - Example: 
@@ -126,17 +126,17 @@ _Customers_
   "value": "2018/03/20" }
   ```
 
-- _PUT_: replace an entire computer object by sending all a computers properties starting with the computer_id of the order to be replaced to http://localhost:8080/computers:
+- _PUT_: replace an entire computer object by sending all a computers properties starting with the computer_id of the order to be replaced to http://localhost:8080/api/computers:
   ```
   { "computer_id": [computerId#], "purchase_date": "[YYYY/MM/DD]", "decomission_date": "[YYYY/MM/DD]" (or NULL here if active) }
   ```
 
-- _DELETE_: delete a computer by running a DELETE call to http://localhost:8080/computers and sending:
+- _DELETE_: delete a computer by running a DELETE call to http://localhost:8080/api/computers and sending:
   ```
   { "computer_id": [computerId#] }
   ```
 
-- _POST_: submit a new computer by running a POST call to http://localhost:8080/computers
+- _POST_: submit a new computer by running a POST call to http://localhost:8080/api/computers
 
   - You must send a purchase_date to POST a new computer.
   - Example: { "purchase_date": "YYYY/DD/MM" }
@@ -144,24 +144,24 @@ _Customers_
 
 # Product Types
 -----
-- GET You can access a list of all product types by running a Get call to `http://localhost:8080/product-types`
-- GET one. You can get the information on a single product type by runnning a Get call to `http://localhost:8080/product-types/{id}`
+- GET You can access a list of all product types by running a Get call to `http://localhost:8080/api/product-types`
+- GET one. You can get the information on a single product type by runnning a Get call to `http://localhost:8080/api/product-types/{id}`
 > Note you need to have a product types unique ID number to get the correct information
 
-- PUT You can update a whole product type by running a Put call to `http://localhost:8080/product-types`
+- PUT You can update a whole product type by running a Put call to `http://localhost:8080/api/product-types`
 
   * Running a put requires that you submit the entire object.
   * Example: { "id": 1, "name": "Wand" }
 
-- PATCH You can update specific info on a product type by running a Patch call to `http://localhost:8080/product-types/{id}`
+- PATCH You can update specific info on a product type by running a Patch call to `http://localhost:8080/api/product-types/{id}`
 
   * Running a patch requires that you submit the desired column and value.
   * Example: { "column": "name", "value": "sports" }
 
-- DELETE You can delete a product type by running a Delete call to `http://localhost:8080/product-types`
+- DELETE You can delete a product type by running a Delete call to `http://localhost:8080/api/product-types`
   * Submit the target id, Example: { "id": 2 }
 
-- POST You can enter a new product type by running a Post call to `http://localhost:8080/product-types`
+- POST You can enter a new product type by running a Post call to `http://localhost:8080/api/product-types`
 
   * You must put a name with a post.
   * Example: { "name": "Spell Books" }
@@ -169,35 +169,35 @@ _Customers_
 
 # Training Programs
 -----
-- GET You can access a list of all training programs by running a Get call to `http://localhost:5000/programs`
-- GET one. You can get the information on a single training program by runnning a Get call to `http://localhost:5000/programs/{id}`
+- GET You can access a list of all training programs by running a Get call to `http://localhost8080/api/programs`
+- GET one. You can get the information on a single training program by runnning a Get call to `http://localhost:8080/api/programs/{id}`
 > Note you need to have a training program unique ID number to get the correct information
 
-- PUT You can update a training program by running a Put call to `http://localhost:5000/programs`
+- PUT You can update a training program by running a Put call to `http://localhost:8080/api/programs`
 
   * Running a Put requires that you submit the entire object.
   * Example: { "id": 1 "startDate": "02-14-2018", "endDate": "02-15-2018", "maxAttendees": 50 }
 
-- PATCH You can update specific info on a training program by running a Patch call to `http://localhost:8080/product-types/{id}`
+- PATCH You can update specific info on a training program by running a Patch call to `http://localhost:8080/api/product-types/{id}`
 
   * Running a patch requires that you submit the desired column and value.
   * Example: { "column": "title", "value": "Sales" }
 
-- DELETE You can delete a training program by running a Delete call to `http://localhost:5000/programs/{id}`
+- DELETE You can delete a training program by running a Delete call to `http://localhost:8080/api/programs/{id}`
 
 > Note - you can only delete a training program if the current date is before the start date of a program. You cannot delete programs that have already started.
 
-- POST You can enter a new training program by running a Post call to `http://localhost:5000/programs`
+- POST You can enter a new training program by running a Post call to `http://localhost:8080/api/programs`
   * You must put a name, startDate, endDate, and maxAttendees with a Post.
   * Example: { "name": "Learning Vim", "startDate": "02-14-2018", "endDate": "10-15-2018", "maxAttendees": 50 }
 
 
 # Departments
 -----
-_GET_: access a list of all departments by running a GET call to http://localhost:8080/departments
-- You can get the information on a single department by runnning a GET call to http://localhost:8080/departments/{departmentId}
+_GET_: access a list of all departments by running a GET call to http://localhost:8080/api/departments
+- You can get the information on a single department by runnning a GET call to http://localhost:8080/api/departments/{departmentId}
 > Note you need to have the unique ID number
-- _PUT_: update the info on a specific department by running a PUT call to http://localhost:8080/departments/{departmentId}
+- _PUT_: update the info on a specific department by running a PUT call to http://localhost:8080/api/departments/{departmentId}
 - Running a PUT requires that you submit the desired column and value to be edited. 
 - Example: 
  ```
@@ -217,7 +217,7 @@ Example:
   "value": "HR" 
   ```
 
-- _POST_: submit a new department by running a POST call to http://localhost:8080/departments
+- _POST_: submit a new department by running a POST call to http://localhost:8080/api/departments
 - You must send a dept_name, followed by supervisor_id and budget to POST a new employee.
 - Example:
 ```
@@ -230,10 +230,10 @@ Example:
 
 # Employees
 -----
-_GET_: access a list of all employees by running a GET call to http://localhost:8080/employees
-- You can get the information on a single employee by runnning a GET call to http://localhost:8080/employees/{employeeId}
+_GET_: access a list of all employees by running a GET call to http://localhost:8080/api/employees
+- You can get the information on a single employee by runnning a GET call to http://localhost:8080/api/employees/{employeeId}
 > Note you need to have the unique ID number
-- _PUT_: update the info on a specific employee by running a PUT call to http://localhost:8080/employees/{employeeId}
+- _PUT_: update the info on a specific employee by running a PUT call to http://localhost:8080/api/employees/{employeeId}
 - Running a PUT requires that you submit the desired column and value to be edited.
 - Example: 
 ```
@@ -244,7 +244,7 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 "department_id": [INT]
 }
 ```
-- _POST_: submit a new employee by running a POST call to http://localhost:8080/employees
+- _POST_: submit a new employee by running a POST call to http://localhost:8080/api/employees
 - You must send a first_name, last_name, email followed by department_id to POST a new employee.
 - Example: 
 ```
@@ -255,7 +255,7 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 "department_id": [INT]
 }
 ```
-- _PATCH_: update the info on a specific employee by running a PATCH call to http://localhost:8080/employees/{employeeID}
+- _PATCH_: update the info on a specific employee by running a PATCH call to http://localhost:8080/api/employees/{employeeID}
 
 Running a PATCH requires that you submit the desired column and value to be edited.
 Example:
@@ -316,11 +316,11 @@ Example:
 
 # Products
 -----
-- _GET_: access a list of all products by running a GET call to http://localhost:8080/products
-  - You can get the information on a single product by runnning a GET call to http://localhost:8080/products/{productID}
+- _GET_: access a list of all products by running a GET call to http://localhost:8080/api/products
+  - You can get the information on a single product by runnning a GET call to http://localhost:8080/api/products/{productID}
   > Note you need to have the unique ID number
 
-- _PATCH_: update the info on a specific product by running a PATCH call to http://localhost:8080/products/{productID}
+- _PATCH_: update the info on a specific product by running a PATCH call to http://localhost:8080/api/products/{productID}
 
   - Running a PATCH requires that you submit the desired column and value to be edited.
   - Example: 
@@ -329,7 +329,7 @@ Example:
   "value": "Nintendo Switch" }
   ```
 
-- _PUT_: replace an entire product object by sending all of a product's properties starting with the product_id of the product to be replaced to http://localhost:8080/products
+- _PUT_: replace an entire product object by sending all of a product's properties starting with the product_id of the product to be replaced to http://localhost:8080/api/products
   ```
   { "product_id": productId#,
     "title": "TEXT",
@@ -339,12 +339,12 @@ Example:
     "description": "TEXT" }
   ```
 
-- _DELETE_: delete a product by running a DELETE call to http://localhost:8080/products and sending:
+- _DELETE_: delete a product by running a DELETE call to http://localhost:8080/api/products and sending:
   ```
   { "product_id": productId# }
   ```
 
-- _POST_: submit a new product by running a POST call to http://localhost:8080/products
+- _POST_: submit a new product by running a POST call to http://localhost:8080/api/products
 
   - You must send a whole product object to POST a new product.
   - Example: 

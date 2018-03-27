@@ -12,6 +12,7 @@ module.exports.getAllCustomers = () => {
   });
 };
 
+// filters for active users
 module.exports.getCustsByActivity = (status) => {
   const statusQuery = (status === "true") ? 1 : 0; 
   return new Promise( (resolve, reject) => {
@@ -22,6 +23,7 @@ module.exports.getCustsByActivity = (status) => {
   });
 };
 
+// returns one customer
 module.exports.getCustomer = (custID) => {
   return new Promise( (resolve, reject) => {
     db.all(`SELECT * FROM customers WHERE customer_id=${custID}`, (err, customer) => {
@@ -31,6 +33,7 @@ module.exports.getCustomer = (custID) => {
   });
 };
 
+// adds new customer
 module.exports.addCustomer = ({ first_name, last_name, join_date, active }) => {
   return new Promise( (resolve, reject) => {
     db.run(`INSERT INTO customers 
@@ -42,6 +45,7 @@ module.exports.addCustomer = ({ first_name, last_name, join_date, active }) => {
   });
 };
 
+// updates values of existing customer object
 module.exports.putCustomerObj = ({ customer_id, first_name, last_name, join_date, active }) => {
   return new Promise( (resolve, reject) => {
     db.run(`UPDATE customers SET
@@ -57,6 +61,7 @@ module.exports.putCustomerObj = ({ customer_id, first_name, last_name, join_date
   });
 };
 
+// updates one column of customer object
 module.exports.patchCustomerObj = (custID, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id

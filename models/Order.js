@@ -45,11 +45,12 @@ module.exports.patchOrder = (id, { column, value }) => {
   });
 };
 
-module.exports.editOrder = ({ order_id, customer_id, order_date}) => {
+module.exports.editOrder = ({ order_id, customer_id, order_date, payment_type_id}) => {
   return new Promise( (resolve, reject) => {
     db.run(`UPDATE orders SET
     customer_id="${customer_id}",
-    order_date="${order_date}"
+    order_date="${order_date}",
+    payment_type_id="${payment_type_id}"
     WHERE order_id = ${order_id}`, function(err, order) {
       if (err) return reject(err);
       resolve({ id : this.changes });

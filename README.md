@@ -183,7 +183,8 @@ _Customers_
   * Running a patch requires that you submit the desired column and value.
   * Example: { "column": "title", "value": "Sales" }
 
-- DELETE You can delete a training program by running a Delete call to `http://localhost:8080/api/programs/{id}`
+- DELETE You can delete a training program by running a Delete call to `http://localhost:8080/api/programs`
+* Example: { "id": 2 }
 
 > Note - you can only delete a training program if the current date is before the start date of a program. You cannot delete programs that have already started.
 

@@ -21,10 +21,10 @@ module.exports.getSingleOrder = orderID => {
   });
 };
 
-module.exports.addSingleOrder = ({order_date, customer_id}) => {
+module.exports.addSingleOrder = ({customer_id, order_date, payment_type_id}) => {
   return new Promise ((resolve, reject) => {
     db.run(`INSERT INTO orders
-    VALUES (null, "${order_date}", ${customer_id}, null)
+    VALUES (null, ${customer_id}, "${order_date}", ${payment_type_id})
     `,
     function(err, newOrder) {
       if (err) return reject(err);

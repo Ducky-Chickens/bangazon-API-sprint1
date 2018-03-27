@@ -1,5 +1,5 @@
 'use strict';
-const { getAllProducts, getSingleProduct, addSingleProduct, editProduct, deleteProduct }  = require('../models/Product');
+const { getAllProducts, getSingleProduct, addSingleProduct, patchProductObj, putProductObj, deleteProduct }  = require('../models/Product');
 const { getOrdersByProductId } = require('../models/Order_Product');
 
 //Get all products
@@ -29,9 +29,9 @@ module.exports.postNewProduct = (req, res, next) => {
   .catch(err => next(err));
 };
 
-//Edit a product
-module.exports.editProductByColumn = (req, res, next) => {
-  editProduct(req.params.prodId, req.body)
+//Edit one attribute on a product
+module.exports.patchProductData = (req, res, next) => {
+  patchProductObj(req.params.prodId, req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);
@@ -42,6 +42,20 @@ module.exports.editProductByColumn = (req, res, next) => {
     }
   })
 };
+
+//Edit an entire product
+module.exports.putProductData = (req, res, next) => {
+  putProductObj(req.body)
+  .then(data => {
+    if(data){
+      res.status(200).json(data);
+    } else {
+      let error = new Error('Failed to edit Product');
+      error.status = 500;
+      next(error);
+    }
+  })
+}
 
 //Delete a product
 module.exports.deleteOneProduct = (req, res, next) => {

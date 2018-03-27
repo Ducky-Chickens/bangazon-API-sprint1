@@ -176,7 +176,7 @@ _Customers_
 - PUT You can update a training program by running a Put call to `http://localhost:8080/api/programs`
 
   * Running a Put requires that you submit the entire object.
-  * Example: { "id": 1 "startDate": "02-14-2018", "endDate": "02-15-2018", "maxAttendees": 50 }
+  * Example: { "id": 1, "title": "Program Name" "startDate": "02-14-2018", "endDate": "02-15-2018", "maxAttendees": 50 }
 
 - PATCH You can update specific info on a training program by running a Patch call to `http://localhost:8080/api/product-types/{id}`
 
@@ -189,7 +189,7 @@ _Customers_
 
 - POST You can enter a new training program by running a Post call to `http://localhost:8080/api/programs`
   * You must put a name, startDate, endDate, and maxAttendees with a Post.
-  * Example: { "name": "Learning Vim", "startDate": "02-14-2018", "endDate": "10-15-2018", "maxAttendees": 50 }
+  * Example: { "title": "Learning Vim", "startDate": "02-14-2018", "endDate": "10-15-2018", "maxAttendees": 50 }
 
 
 # Departments

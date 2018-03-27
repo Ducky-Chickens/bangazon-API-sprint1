@@ -106,7 +106,7 @@ _Customers_
   { "payment_type_id": [payTypeId#] }
   ```
 
-- _POST_: submit a new computer by running a POST call to http://localhost:8080/api/payment-types
+- _POST_: submit a new payment type by running a POST call to http://localhost:8080/api/payment-types
 
   - You must send a TYPE and ACCOUNT_NUMBER to POST a new payment type.
   - Example: { "type": "Visa", "account_number": 481637138 }

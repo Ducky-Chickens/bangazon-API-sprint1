@@ -84,7 +84,7 @@ _Customers_
 # Payment-Types
 -----
 - _GET_: access a list of all payment types by running a GET call to http://localhost:8080/api/payment-types
-  - You can get the information on a single computer by runnning a GET call to http://localhost:8080/api/payment-types/{paymentTypeID}
+  - You can get the information on a single payment type by runnning a GET call to http://localhost:8080/api/payment-types/{paymentTypeID}
   > Note you need to have the unique ID number
 
 - _PATCH_: update the info on a specific payment type by running a PATCH call to http://localhost:8080/api/payment-types/{payTypeID}
@@ -106,7 +106,7 @@ _Customers_
   { "payment_type_id": [payTypeId#] }
   ```
 
-- _POST_: submit a new computer by running a POST call to http://localhost:8080/api/computers
+- _POST_: submit a new computer by running a POST call to http://localhost:8080/api/payment-types
 
   - You must send a TYPE and ACCOUNT_NUMBER to POST a new payment type.
   - Example: { "type": "Visa", "account_number": 481637138 }

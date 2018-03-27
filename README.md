@@ -78,7 +78,7 @@ _Customers_
 - _POST_: submit a new order by running a POST call to http://localhost:8080/api/orders
 
   - You must send a ORDER_DATE, followed by PAYMENT_TYPE_ID to POST a new order.
-  - Example: { "order_date": "[date]", "payment_type_id": [paymentTypeId] }
+  - Example: { "customer_id": 2, "order_date": "2020/20/20", "payment_type_id": 666 }
 
 
 # Payment-Types

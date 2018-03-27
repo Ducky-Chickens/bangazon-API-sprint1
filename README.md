@@ -9,9 +9,8 @@
 - [Credits](#credits)
  
 
-
-<a name="setup"/>
-# Basic Project Setup
+# Basic Project Setup <a name="setup"/>
+-----
 
 
 ```
@@ -28,13 +27,16 @@ npm build tables
 http-server
 ```
 
-<a name="helpers"/>
-# Helper Applications
-- [DB Browser for SQLite](http://sqlitebrowser.org/) to work directly with database without command line
+
+# Helper Applications <a name="helpers"/>
+-----
+
+- [DB Browser for SQLite](https://sqlitebrowser.org/) to work directly with database without command line
 - [Postman](https://www.getpostman.com/) to use PUT/POST/DELETE http methods
 
-<a name="erd"/>
-# Entity Relationship Diagrams
+
+# Entity Relationship Diagrams <a name="erd"/>
+-----
 
 _Employees_
 
@@ -43,10 +45,9 @@ _Employees_
 _Customers_
 
 ![Customers ERD](/ERD/customers-products_v2.png)
------
 
-<a name="methods"/>
-# Methods
+
+# Methods <a name="methods"/>
 -----
 
 # Orders
@@ -140,9 +141,9 @@ _Customers_
   - You must send a purchase_date to POST a new computer.
   - Example: { "purchase_date": "YYYY/DD/MM" }
   
------
 
 # Product Types
+-----
 - GET You can access a list of all product types by running a Get call to `http://localhost:8080/product-types`
 - GET one. You can get the information on a single product type by runnning a Get call to `http://localhost:8080/product-types/{id}`
 > Note you need to have a product types unique ID number to get the correct information
@@ -288,21 +289,25 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
     }
 ```
 
-<a name="libraries"/>
-# Third Party Libraries
+
+# Third Party Libraries <a name="libraries"/>
+-----
 - [Express](https://expressjs.com/)
 - [Sqlite3](https://www.npmjs.com/package/sqlite3)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Body-parser](https://www.npmjs.com/package/body-parser-json)
 
-<a name="credits"/>
-# Credits
+
+# Credits <a name="credits"/>
+
 
 ## Project Manager
+-----
 - [Emily Lemmon](https://github.com/Rian501)
 
 ## API Developers
+-----
 - [David Hazlett](https://github.com/dhazlettjr)
 - [Melissa Bell](https://github.com/melissabell456)
 - [Valerie Freeman](https://github.com/Valerie-Freeman)

@@ -5,14 +5,6 @@
 - [Helper Apps](#helpers)
 - [Relationship Diagrams](#erd)
 - [Query Methods](#methods)
-  - [Orders](#orders)
-  - [Payment-Types] (#payments)
-  - [Computers] (#computers)
-  - [Product Types] (#producttypes)
-  - [Training Programs] (#trainingprograms)
-  - [Departments] (#departments)
-  - [Employees] (#employees) 
-  - [Customers] (#customers) 
 - [Libraries](#libraries)
 - [Credits](#credits)
  
@@ -51,12 +43,12 @@ _Employees_
 _Customers_
 
 ![Customers ERD](/ERD/customers-products_v2.png)
+-----
 
 <a name="methods"/>
 # Methods
 -----
 
-<a name="orders"/>
 # Orders
 -----
 - _GET_: access a list of all orders by running a GET call to http://localhost:8080/orders
@@ -87,7 +79,7 @@ _Customers_
   - You must send a ORDER_DATE, followed by PAYMENT_TYPE_ID to POST a new order.
   - Example: { "order_date": "[date]", "payment_type_id": [paymentTypeId] }
 
-<a name="payments"/>
+
 # Payment-Types
 -----
 - _GET_: access a list of all payment types by running a GET call to http://localhost:8080/payment-types
@@ -118,7 +110,6 @@ _Customers_
   - You must send a TYPE and ACCOUNT_NUMBER to POST a new payment type.
   - Example: { "type": "Visa", "account_number": 481637138 }
 
-<a name="computers"/>
 # Computers
 -----
 - _GET_: access a list of all computers by running a GET call to http://localhost:8080/computers
@@ -151,7 +142,6 @@ _Customers_
   
 -----
 
-<a name="producttypes"/>
 # Product Types
 - GET You can access a list of all product types by running a Get call to `http://localhost:8080/product-types`
 - GET one. You can get the information on a single product type by runnning a Get call to `http://localhost:8080/product-types/{id}`
@@ -175,8 +165,9 @@ _Customers_
   * You must put a name with a post.
   * Example: { "name": "Spell Books" }
 
-<a name="trainingprograms"/>
+
 # Training Programs
+-----
 - GET You can access a list of all training programs by running a Get call to `http://localhost:5000/programs`
 - GET one. You can get the information on a single training program by runnning a Get call to `http://localhost:5000/programs/{id}`
 > Note you need to have a training program unique ID number to get the correct information
@@ -200,7 +191,6 @@ _Customers_
   * Example: { "name": "Learning Vim", "startDate": "02-14-2018", "endDate": "10-15-2018", "maxAttendees": 50 }
 
 
-<a name="departments"/>
 # Departments
 -----
 _GET_: access a list of all departments by running a GET call to http://localhost:8080/departments
@@ -224,7 +214,6 @@ _GET_: access a list of all departments by running a GET call to http://localhos
 }
 ```
 
-<a name="employees"/>
 # Employees
 -----
 _GET_: access a list of all employees by running a GET call to http://localhost:8080/employees
@@ -249,12 +238,11 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 }
 ```
 
-<a name="customers"/>
 # Customers
 -----
 * GET You can access a list of all customers by running a Get call to `http://localhost:8080/api/customers`
 * GET one. You can get the information on a single customer by running a Get call to http://localhost:8080/api/customers/{customerID}.
->Note you need to have a customers unique ID number to get the correct information
+> Note you need to have a customers unique ID number to get the correct information
 * GET all customers that are active by running Get `http://localhost:8080/api/customers/?active=true`
 * GET all customers that are not active by running Get `http://localhost:8080/api/customers/?active=false` 
 * PUT You can update the info on a specific customer by running a Put call to `http://localhost:8080/api/customers/`

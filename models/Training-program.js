@@ -73,12 +73,20 @@ module.exports.editProgram = (id, { column, value }) => {
 module.exports.removeProgram = (id) => {
   return new Promise((resolve, reject) => {
     //delete row by id
-    db.run(`DELETE FROM training_programs
-    WHERE program_id = ${id}
-    `, function (err) {
-      if (err) { return reject(err) };
-      resolve({ status: `${this.changes} item deleted`});
-    });
+    db.run(
+      // `DELETE FROM employee_trainingPgrm
+      `DELETE FROM training_programs
+      WHERE program_id = ${id}
+      `, function (err) {
+        if (err) { return reject(err) };
+        db.run(
+          `DELETE FROM employee_trainingPgrm
+          WHERE program_id = ${id}
+          `, function (err) {
+            if (err) { return reject(err) }
+          });
+        resolve({ status: `${this.changes} item deleted`});
+      });
   })
 }
 

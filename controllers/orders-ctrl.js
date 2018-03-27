@@ -66,10 +66,10 @@ module.exports.deleteOneOrder = (req, res, next) => {
   error1.status = 400
   let error2 = new Error('Order not found!')
   error2.status = 404
-  getSingleOrder(req.body.id)
+  getSingleOrder(req.body.order_id)
   .then(order => {
     order ? order.payment_type_id = "null" ? 
-    deleteOrder(req.body.id)
+    deleteOrder(req.body.order_id)
       .then(data => {
         res.status(200).json(data);
       }) : next(error1) : next(error2)

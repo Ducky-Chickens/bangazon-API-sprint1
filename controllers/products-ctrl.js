@@ -60,18 +60,18 @@ module.exports.putProductData = (req, res, next) => {
 //Delete a product
 module.exports.deleteOneProduct = (req, res, next) => {
   //first get product by id to check if product exists
-  getSingleProduct(req.body.prodId)
+  getSingleProduct(req.body.product_id)
   .then(product => {
     if(product) {
       //Delete only if order_product with given product id does NOT exist  
-      getOrdersByProductId(req.body.prodId)
+      getOrdersByProductId(req.body.product_id)
       .then(orders => {
         if(orders.length > 0) {
           let error = new Error('Failed to delete, an order has been placed for this product and cannot be deleted.');
           error.status = 405;
           next(error);
         } else {
-          deleteProduct(req.body.prodId)
+          deleteProduct(req.body.product_id)
           .then(data => {
             res.status(200).json(data);
           });

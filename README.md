@@ -65,17 +65,17 @@ _Customers_
   "value": "2003/3/20" }
   ```
 
-- _PUT_: replace an entire order object by sending all an orders properties starting with the order_id of the order to be replaced to http://localhost:8080/orders:
+- _PUT_: replace an entire order object by sending all an orders properties starting with the order_id of the order to be replaced to http://localhost:8080/api/orders:
   ```
   { "order_id": [orderId#], "customer_id": [customerId#], "order_date": "[YYYY/MM/DD]", "payment_type_id": [payTypeId#] }
   ```
 
-- _DELETE_: delete an order by running a DELETE call to http://localhost:8080/orders and sending:
+- _DELETE_: delete an order by running a DELETE call to http://localhost:8080/api/orders and sending:
   ```
   { "order_id": [orderId#] }
   ```
 
-- _POST_: submit a new order by running a POST call to http://localhost:8080/orders
+- _POST_: submit a new order by running a POST call to http://localhost:8080/api/orders
 
   - You must send a ORDER_DATE, followed by PAYMENT_TYPE_ID to POST a new order.
   - Example: { "order_date": "[date]", "payment_type_id": [paymentTypeId] }

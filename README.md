@@ -202,12 +202,13 @@ _GET_: access a list of all departments by running a GET call to http://localhos
 - Example: 
  ```
 {
+"department_id": [INT],
 "dept_name": "[TEXT]",
 "supervisor_id": [INT],
 "budget": [INT]
 }
 ```
- - _PATCH_: update the info on a specific deparmtnet by running a PATCH call to http://localhost:8080/departments/{departmentID}
+ - _PATCH_: update the info on a specific deparmtnet by running a PATCH call to http://localhost:8080/departments
 
 Running a PATCH requires that you submit the desired column and value to be edited.
 Example:

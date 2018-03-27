@@ -51,7 +51,7 @@ module.exports.replaceOldProdType = (req, res, next) => {
 }
 
 module.exports.removeProdTypeById = (req, res, next) => {
-  removeProdType(req.body.id)
+  removeProdType(req.body.product_type_id)
   .then(data => {
     let error = new Error('Failed to remove Product Type');
     error.status = 404;

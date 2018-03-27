@@ -197,7 +197,7 @@ _Customers_
 _GET_: access a list of all departments by running a GET call to http://localhost:8080/api/departments
 - You can get the information on a single department by runnning a GET call to http://localhost:8080/api/departments/{departmentId}
 > Note you need to have the unique ID number
-- _PUT_: update the info on a specific department by running a PUT call to http://localhost:8080/api/departments/{departmentId}
+- _PUT_: update the info on a specific department by running a PUT call to http://localhost:8080/api/departments
 - Running a PUT requires that you submit the desired column and value to be edited. 
 - Example: 
  ```
@@ -208,7 +208,7 @@ _GET_: access a list of all departments by running a GET call to http://localhos
 "budget": [INT]
 }
 ```
- - _PATCH_: update the info on a specific deparmtnet by running a PATCH call to http://localhost:8080/departments
+ - _PATCH_: update the info on a specific deparmtnet by running a PATCH call to http://localhost:8080/departments/{departmentId}
 
 Running a PATCH requires that you submit the desired column and value to be edited.
 Example:
@@ -234,11 +234,12 @@ Example:
 _GET_: access a list of all employees by running a GET call to http://localhost:8080/api/employees
 - You can get the information on a single employee by runnning a GET call to http://localhost:8080/api/employees/{employeeId}
 > Note you need to have the unique ID number
-- _PUT_: update the info on a specific employee by running a PUT call to http://localhost:8080/api/employees/{employeeId}
+- _PUT_: update the info on a specific employee by running a PUT call to http://localhost:8080/api/employees
 - Running a PUT requires that you submit the desired column and value to be edited.
 - Example: 
 ```
 {
+"employee_ID": [INT],
 "first_name": "[TEXT]",
 "last_name": [TEXT],
 "email": [TEXT],

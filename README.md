@@ -180,6 +180,19 @@ _GET_: access a list of all departments by running a GET call to http://localhos
  { "column": "dept_name", 
   "value": "HR" }
   ```
+ - _PATCH_: update the info on a specific deparmtnet by running a PATCH call to http://localhost:8080/departments/{departmentID}
+
+Running a PATCH requires that you submit the desired column and value to be edited.
+Example:
+
+```
+{
+"dept_name": "[TEXT]",
+"supervisor_id": [INT],
+"budget": [INT]
+}
+```
+
 - _POST_: submit a new department by running a POST call to http://localhost:8080/departments
 - You must send a dept_name, followed by supervisor_id and budget to POST a new employee.
 - Example:
@@ -198,9 +211,13 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 - Running a PUT requires that you submit the desired column and value to be edited.
 - Example: 
 ```
-  { "column": "first_name", 
-  "value": "John" }
-  ```
+{
+"first_name": "[TEXT]",
+"last_name": [TEXT],
+"email": [TEXT],
+"department_id": [INT]
+}
+```
 - _POST_: submit a new employee by running a POST call to http://localhost:8080/employees
 - You must send a first_name, last_name, email followed by department_id to POST a new employee.
 - Example: 
@@ -211,6 +228,14 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
 "email": [TEXT],
 "department_id": [INT]
 }
+```
+- _PATCH_: update the info on a specific employee by running a PATCH call to http://localhost:8080/employees/{employeeID}
+
+Running a PATCH requires that you submit the desired column and value to be edited.
+Example:
+```
+{ "column": "first_name", 
+"value": "sam" }
 ```
 
 

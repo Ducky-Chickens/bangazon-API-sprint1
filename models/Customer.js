@@ -49,7 +49,7 @@ module.exports.putCustomerObj = ({ customer_id, first_name, last_name, join_date
     last_name="${last_name}",
     join_date="${join_date}",
     active="${active}"
-    WHERE customer_id = ${customer_id}`, function(err, computer) {
+    WHERE customer_id = ${customer_id}`, function(err) {
       if (err) return reject(err);
       resolve({ id : this.changes });
       }

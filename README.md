@@ -265,6 +265,50 @@ _GET_: access a list of all employees by running a GET call to http://localhost:
     }
 ```
 
+# Products
+-----
+- _GET_: access a list of all products by running a GET call to http://localhost:8080/products
+  - You can get the information on a single product by runnning a GET call to http://localhost:8080/products/{productID}
+  > Note you need to have the unique ID number
+
+- _PATCH_: update the info on a specific product by running a PATCH call to http://localhost:8080/products/{productID}
+
+  - Running a PATCH requires that you submit the desired column and value to be edited.
+  - Example: 
+  ```
+  { "column": "title", 
+  "value": "Nintendo Switch" }
+  ```
+
+- _PUT_: replace an entire product object by sending all of a product's properties starting with the product_id of the product to be replaced to http://localhost:8080/products
+  ```
+  { "product_id": [productId#],
+    "title": [TEXT],
+    "price": "[12.34]",
+    "product_type_id": [productTypeId#],
+    "customer_id": [customerId#],  
+    "description": "[TEXT]" }
+  ```
+
+- _DELETE_: delete a product by running a DELETE call to http://localhost:8080/products and sending:
+  ```
+  { "product_id": [productId#] }
+  ```
+
+- _POST_: submit a new product by running a POST call to http://localhost:8080/products
+
+  - You must send a whole product object to POST a new product.
+  - Example: 
+  ```
+  { "product_id": [productId#],
+    "title": [TEXT],
+    "price": "[12.34]",
+    "product_type_id": [productTypeId#],
+    "customer_id": [customerId#],  
+    "description": "[TEXT]" }
+```
+
+
 
 # Third Party Libraries
 - [Express](https://expressjs.com/)

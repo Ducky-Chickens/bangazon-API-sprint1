@@ -24,7 +24,7 @@ npm run build-tables
 
 // Run a local server to access the data in browser
 
-http-server
+nodemon app.js
 ```
 
 

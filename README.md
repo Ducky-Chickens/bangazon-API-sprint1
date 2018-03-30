@@ -280,8 +280,7 @@ Example:
       "customer_id": INT,
       "first_name": "TEXT",
       "last_name": "TEXT",
-      "join_date": "2018-03-05",
-      "active": INT (0 or 1)
+      "join_date": "2018-03-05"
     }
 
 ```
@@ -291,8 +290,7 @@ Example:
     {
       "first_name": "TEXT",
       "last_name": "TEXT",
-      "create_date": "2018-03-05",
-      "active": INT (0 or 1)
+      "create_date": "2018-03-05"
     }
 ```
 
@@ -310,9 +308,7 @@ Example:
     {
       "first_name": "TEXT",
       "last_name": "TEXT",
-      "create_date": "2018-03-05",
-      "active": INT (0 or 1)
-
+      "create_date": "2018-03-05"
     }
 ```
 

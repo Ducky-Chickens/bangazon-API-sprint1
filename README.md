@@ -34,6 +34,8 @@ node app.js
 - [NodeJS](https://nodejs.org/en/) to spin up the server
 - [DB Browser for SQLite](https://sqlitebrowser.org/) to work directly with database without command line
 - [Postman](https://www.getpostman.com/) to use PUT/POST/DELETE http methods
+  - In Postman, click "Params", then under "Headers", select "Content-Type" as KEY and "application/json" as VALUE
+  - To test the examples provided in the query methods section, under "Body", select "raw" before sending
 
 
 # Entity Relationship Diagrams <a name="erd"/>
@@ -98,24 +100,28 @@ _Customers_
   - Running a PATCH requires that you submit the desired column and value to be edited.
   - Example: 
   ```
-  { "column": "account_number", 
-  "value": "481637138" }
+  { "column": "account_number", "value": "481637138" }
   ```
 
 - _PUT_: replace an entire order object by sending all a payment types properties starting with the payment_type_id of the order to be replaced to http://localhost:8080/api/payment-types:
+  - Example: 
   ```
-  { "payment_type_id": [orderId#], "type": "[account type name]", "account_number": [accountId#] "customer_id": [customerId#] }
+  { "payment_type_id": 1, "type": "MasterCard", "account_number": 22223333 "customer_id": 6 }
   ```
 
 - _DELETE_: delete a payment type by running a DELETE call to http://localhost:8080/api/payment-types and sending:
+  - Example: 
   ```
-  { "payment_type_id": [payTypeId#] }
+  { "payment_type_id": 2 }
   ```
 
 - _POST_: submit a new payment type by running a POST call to http://localhost:8080/api/payment-types
 
   - You must send a TYPE and ACCOUNT_NUMBER to POST a new payment type.
-  - Example: { "type": "Visa", "account_number": 481637138 }
+  - Example: 
+  ```
+  { "type": "Visa", "account_number": 481637138 }
+  ```
 
 # Computers
 -----
@@ -128,24 +134,28 @@ _Customers_
   - Running a PATCH requires that you submit the desired column and value to be edited.
   - Example: 
   ```
-  { "column": "decomission_date", 
-  "value": "2018/03/20" }
+  { "column": "decomission_date", "value": "2018/03/20" }
   ```
 
 - _PUT_: replace an entire computer object by sending all a computers properties starting with the computer_id of the order to be replaced to http://localhost:8080/api/computers:
+  - Example: 
   ```
-  { "computer_id": [computerId#], "purchase_date": "[YYYY/MM/DD]", "decomission_date": "[YYYY/MM/DD]" (or NULL here if active) }
+  { "computer_id": [1, "purchase_date": "2020-3-20", "decomission_date": "[YYYY/MM/DD]" (or NULL here, without quotes, if active) }
   ```
 
 - _DELETE_: delete a computer by running a DELETE call to http://localhost:8080/api/computers and sending:
+  - Example: 
   ```
-  { "computer_id": [computerId#] }
+  { "computer_id": 1 }
   ```
 
 - _POST_: submit a new computer by running a POST call to http://localhost:8080/api/computers
 
   - You must send a purchase_date to POST a new computer.
-  - Example: { "purchase_date": "YYYY/DD/MM" }
+  - Example: 
+  ```
+  { "purchase_date": "YYYY/DD/MM" }
+  ```
   
 
 # Product Types

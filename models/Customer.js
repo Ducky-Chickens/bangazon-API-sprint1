@@ -63,7 +63,6 @@ module.exports.putCustomerObj = ({ customer_id, first_name, last_name, join_date
 
 module.exports.patchCustomerObj = (custID, { column, value }) => {
   return new Promise((resolve, reject) => {
-    // update table set column where id = param id
       db.run(`UPDATE customers SET ${column} = "${value}"
       WHERE customer_id = ${custID}
       `, function (err) {

@@ -28,19 +28,23 @@ module.exports.addSingleOrder = ({customer_id, order_date, payment_type_id}) => 
     `,
     function(err, newOrder) {
       if (err) return reject(err);
-      resolve({id: this.lastID});
+      resolve({status: `order with ID # ${this.lastID} created`});
     });
   });
 };
 
+
 module.exports.patchOrder = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id
-      db.run(`UPDATE orders SET "${column}" = "${value}"
-      WHERE order_id = ${id}
-      `, function (err) {
-        if (err) { return reject(err) };
-        resolve({changes: this.changes});
+    if (column != "payment_type_id") {
+      value = `"${value}"`
+    }
+    db.run(`UPDATE orders SET "${column}" = ${value}
+    WHERE order_id = ${id}
+    `, function (err) {
+      if (err) { return reject(err) };
+      resolve({status: `${this.changes} order updated`});
     });
   });
 };
@@ -50,10 +54,10 @@ module.exports.editOrder = ({ order_id, customer_id, order_date, payment_type_id
     db.run(`UPDATE orders SET
     customer_id="${customer_id}",
     order_date="${order_date}",
-    payment_type_id="${payment_type_id}"
+    payment_type_id=${payment_type_id}
     WHERE order_id = ${order_id}`, function(err, order) {
       if (err) return reject(err);
-      resolve({ id : this.changes });
+      resolve({ status : `${this.changes} order replaced`});
       }
     );
   });

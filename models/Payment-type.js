@@ -29,7 +29,7 @@ module.exports.addSinglePaymentType = ({type, account_number, customer_id}) => {
     `,
     function(err, newPayType) {
       if (err) return reject(err);
-      resolve({this: this.lastID});
+      resolve({status: `payment type with ID # ${this.lastID} created`});
     });
   });
 };
@@ -41,7 +41,7 @@ module.exports.patchPaymentType = (id, { column, value }) => {
       WHERE payment_type_id = ${id}
       `, function (err) {
         if (err) { return reject(err) };
-        resolve({changes: this.changes});
+        resolve({status: `${this.changes} payment type updated`});
       });
   })
 }
@@ -54,7 +54,7 @@ module.exports.editPaymentType = ({ payment_type_id, type, account_number, custo
     customer_id="${customer_id}"
     WHERE payment_type_id = ${payment_type_id}`, function(err, paymentType) {
       if (err) return reject(err);
-      resolve({ "You changed the following number of payment types" : this.changes });
+      resolve({status: `${this.changes} payment type replaced`});
       }
     );
   });
@@ -65,7 +65,7 @@ module.exports.deletePaymentType = payTypeID => {
     db.run(`DELETE FROM payment_types WHERE payment_type_id=${payTypeID}`, 
     function(err, payType) {
       if (err) return reject(err);
-      resolve({changes: this.changes});
+      resolve({status: `${this.changes} payment type deleted`});
     });
   });
 };

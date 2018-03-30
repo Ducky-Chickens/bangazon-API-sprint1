@@ -20,13 +20,13 @@ module.exports.getSingleComputer = compID => {
   });
 };
 
-module.exports.addSingleComputer = ({purchaseDate}) => {
+module.exports.addSingleComputer = ({purchase_date}) => {
   return new Promise ((resolve, reject) => {
     db.run(`INSERT INTO computers
-    VALUES (null, "${purchaseDate}", null)`, 
+    VALUES (null, "${purchase_date}", null)`, 
     function(err, computer) {
       if (err) return reject(err);
-      resolve({ id : this.lastID });
+      resolve({status: `computer with ID # ${this.lastID} created`});
     });
   });
 };
@@ -38,7 +38,7 @@ module.exports.patchComputer = (id, { column, value }) => {
       WHERE computer_id = ${id}
       `, function (err) {
         if (err) { return reject(err) };
-        resolve({changes: this.changes});
+        resolve({status: `${this.changes} computer updated`});
       }
     );
   })
@@ -51,7 +51,7 @@ module.exports.editComputer = ({ computer_id, purchase_date, decomission_date}) 
     decomission_date="${decomission_date}"
     WHERE computer_id = ${computer_id}`, function(err, computer) {
       if (err) return reject(err);
-      resolve({ id : this.changes });
+      resolve({status: `${this.changes} computer replaced`});
       }
     );
   });
@@ -62,7 +62,7 @@ module.exports.deleteComputer = compID => {
     db.run(`DELETE FROM computers WHERE computer_id=${compID}`, 
     function(err, computer) {
       if (err) return reject(err);
-      resolve({changes: this.changes});
+      resolve({status: `${this.changes} computer deleted`});
     });
   });
 };

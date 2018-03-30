@@ -36,10 +36,10 @@ module.exports.getCustomer = (custID) => {
   });
 };
 
-module.exports.addCustomer = ({ first_name, last_name, join_date, active }) => {
+module.exports.addCustomer = ({ first_name, last_name, join_date }) => {
   return new Promise( (resolve, reject) => {
     db.run(`INSERT INTO customers 
-    VALUES(null, "${first_name}", "${last_name}", "${join_date}", "${active}" )`, function(err, computer) {
+    VALUES(null, "${first_name}", "${last_name}", "${join_date}" )`, function(err, computer) {
       if (err) return reject(err);
       resolve({ id : this.lastID });
       }
@@ -47,13 +47,12 @@ module.exports.addCustomer = ({ first_name, last_name, join_date, active }) => {
   });
 };
 
-module.exports.putCustomerObj = ({ customer_id, first_name, last_name, join_date, active }) => {
+module.exports.putCustomerObj = ({ customer_id, first_name, last_name, join_date }) => {
   return new Promise( (resolve, reject) => {
     db.run(`UPDATE customers SET
     first_name="${first_name}",
     last_name="${last_name}",
-    join_date="${join_date}",
-    active="${active}"
+    join_date="${join_date}"
     WHERE customer_id = ${customer_id}`, function(err) {
       if (err) return reject(err);
       resolve({ id : this.changes });

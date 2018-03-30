@@ -291,25 +291,43 @@ Example:
 * GET all customers that are active by running Get `http://localhost:8080/api/customers/?active=true`
 * GET all customers that are not active by running Get `http://localhost:8080/api/customers/?active=false` 
 * PUT You can update the info on a specific customer by running a Put call to `http://localhost:8080/api/customers/`
-        *You must Put the entire changed object, which will include the below:
+        *You must Put the entire changed object, which will include the below (note - unable to change customer_id):
 ```
     {
       "customer_id": INT,
       "first_name": "TEXT",
       "last_name": "TEXT",
-      "join_date": "2018-03-05",
-      "active": INT (0 or 1)
+      "join_date": "2018-03-05"
     }
+    
 
 ```
+
+  example:
+  ```
+      {
+      "customer_id": 1,
+      "first_name": "Billy",
+      "last_name": "Bob",
+      "join_date": "2018-03-28"
+    }
+  ```
+
 * POST To add a new customer, post to `http://localhost:8080/api/customers`.
         *To add a new customer,the below is required:
  ```
     {
       "first_name": "TEXT",
       "last_name": "TEXT",
-      "create_date": "2018-03-05",
-      "active": INT (0 or 1)
+      "join_date": "DATE"
+    }
+```
+  example:
+```
+    {
+      "first_name": "Joe",
+      "last_name": "Shepherd",
+      "join_date": "03/30/2018"
     }
 ```
 
@@ -321,15 +339,12 @@ Example:
       "value": "NEWVALUE"
     }
 ```
-* POST To add a new customer, post to `http://localhost:8080/api/customers`.
-        *To add a new customer,the below is required:
- ```
-    {
-      "first_name": "TEXT",
-      "last_name": "TEXT",
-      "create_date": "2018-03-05",
-      "active": INT (0 or 1)
 
+  example:
+```
+    {
+      "column": "first_name",
+      "value": "Bill III"
     }
 ```
 

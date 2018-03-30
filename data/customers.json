@@ -1,232 +1,104 @@
 {
   "customers": [
     {
-      "first_name": "Annabelle",
-      "last_name": "Carter",
-      "create_date": "2016-11-14",
-      "active": 0
+      "first_name": "Hortense",
+      "last_name": "Lemke",
+      "create_date": "2016-09-30"
     },
     {
-      "first_name": "Beau",
-      "last_name": "Block",
-      "create_date": "2018-03-05",
-      "active": 0
+      "first_name": "Merlin",
+      "last_name": "Wuckert",
+      "create_date": "2010-04-28"
     },
     {
-      "first_name": "Torrance",
-      "last_name": "Kutch",
-      "create_date": "2010-08-16",
-      "active": 0
+      "first_name": "Katherine",
+      "last_name": "Legros",
+      "create_date": "2014-06-03"
     },
     {
-      "first_name": "Wendy",
-      "last_name": "Gerlach",
-      "create_date": "2015-12-12",
-      "active": 0
+      "first_name": "Eveline",
+      "last_name": "Nitzsche",
+      "create_date": "2014-09-03"
     },
     {
-      "first_name": "Sadie",
-      "last_name": "Feil",
-      "create_date": "2015-05-04",
-      "active": 0
+      "first_name": "Frank",
+      "last_name": "Toy",
+      "create_date": "2013-02-28"
     },
     {
-      "first_name": "Isaias",
-      "last_name": "Wolff",
-      "create_date": "2011-01-03",
-      "active": 0
+      "first_name": "Hilbert",
+      "last_name": "Muller",
+      "create_date": "2017-03-23"
     },
     {
-      "first_name": "Palma",
-      "last_name": "Emmerich",
-      "create_date": "2015-01-01",
-      "active": 0
+      "first_name": "Bennie",
+      "last_name": "Dickinson",
+      "create_date": "2012-01-11"
     },
     {
-      "first_name": "Brook",
-      "last_name": "Bernier",
-      "create_date": "2013-10-20",
-      "active": 0
+      "first_name": "Brielle",
+      "last_name": "Kovacek",
+      "create_date": "2015-07-27"
     },
     {
-      "first_name": "Ricardo",
-      "last_name": "Hintz",
-      "create_date": "2016-05-29",
-      "active": 0
+      "first_name": "Jarrod",
+      "last_name": "Thiel",
+      "create_date": "2009-07-04"
     },
     {
-      "first_name": "Terrance",
-      "last_name": "Collins",
-      "create_date": "2012-09-14",
-      "active": 0
+      "first_name": "Kenya",
+      "last_name": "Collier",
+      "create_date": "2010-04-29"
     },
     {
-      "first_name": "Mozelle",
-      "last_name": "Orn",
-      "create_date": "2014-03-07",
-      "active": 0
+      "first_name": "Armando",
+      "last_name": "Bechtelar",
+      "create_date": "2010-08-15"
     },
     {
-      "first_name": "Tatyana",
-      "last_name": "Lubowitz",
-      "create_date": "2009-06-28",
-      "active": 0
+      "first_name": "Oran",
+      "last_name": "Frami",
+      "create_date": "2016-02-20"
+    },
+    {
+      "first_name": "Karli",
+      "last_name": "McGlynn",
+      "create_date": "2011-07-12"
+    },
+    {
+      "first_name": "Leo",
+      "last_name": "Rowe",
+      "create_date": "2008-06-07"
+    },
+    {
+      "first_name": "Lonie",
+      "last_name": "Langosh",
+      "create_date": "2014-10-07"
+    },
+    {
+      "first_name": "Karlie",
+      "last_name": "Runolfsdottir",
+      "create_date": "2016-03-07"
+    },
+    {
+      "first_name": "Lucas",
+      "last_name": "Barrows",
+      "create_date": "2015-04-24"
+    },
+    {
+      "first_name": "Jordon",
+      "last_name": "Barrows",
+      "create_date": "2014-04-17"
+    },
+    {
+      "first_name": "Charity",
+      "last_name": "Mann",
+      "create_date": "2016-09-16"
     },
     {
       "first_name": "Lon",
-      "last_name": "Sipes",
-      "create_date": "2013-06-05",
-      "active": 0
-    },
-    {
-      "first_name": "Fleta",
-      "last_name": "Considine",
-      "create_date": "2008-08-06",
-      "active": 0
-    },
-    {
-      "first_name": "Lilla",
-      "last_name": "Wisoky",
-      "create_date": "2017-04-24",
-      "active": 0
-    },
-    {
-      "first_name": "Leonie",
-      "last_name": "Dooley",
-      "create_date": "2017-12-20",
-      "active": 0
-    },
-    {
-      "first_name": "Santa",
-      "last_name": "Tillman",
-      "create_date": "2009-01-29",
-      "active": 0
-    },
-    {
-      "first_name": "Claudie",
-      "last_name": "Dare",
-      "create_date": "2017-02-26",
-      "active": 0
-    },
-    {
-      "first_name": "Keely",
-      "last_name": "Homenick",
-      "create_date": "2012-09-17",
-      "active": 0
-    },
-    {
-      "first_name": "Bonita",
-      "last_name": "Gleichner",
-      "create_date": "2011-07-22",
-      "active": 0
-    },
-    {
-      "first_name": "Cristina",
-      "last_name": "Rippin",
-      "create_date": "2009-07-01",
-      "active": 0
-    },
-    {
-      "first_name": "Mylene",
-      "last_name": "Orn",
-      "create_date": "2012-09-29",
-      "active": 0
-    },
-    {
-      "first_name": "Margie",
-      "last_name": "Oberbrunner",
-      "create_date": "2013-05-04",
-      "active": 0
-    },
-    {
-      "first_name": "Granville",
-      "last_name": "Bechtelar",
-      "create_date": "2010-08-31",
-      "active": 0
-    },
-    {
-      "first_name": "Torey",
-      "last_name": "O'Kon",
-      "create_date": "2013-04-07",
-      "active": 0
-    },
-    {
-      "first_name": "Maurice",
-      "last_name": "Mueller",
-      "create_date": "2016-08-01",
-      "active": 0
-    },
-    {
-      "first_name": "Jeff",
-      "last_name": "Nikolaus",
-      "create_date": "2010-12-23",
-      "active": 0
-    },
-    {
-      "first_name": "Burley",
-      "last_name": "Schimmel",
-      "create_date": "2017-08-04",
-      "active": 0
-    },
-    {
-      "first_name": "Halie",
-      "last_name": "Denesik",
-      "create_date": "2008-04-04",
-      "active": 0
-    },
-    {
-      "first_name": "Makayla",
-      "last_name": "Hand",
-      "create_date": "2012-06-29",
-      "active": 0
-    },
-    {
-      "first_name": "Leila",
-      "last_name": "McKenzie",
-      "create_date": "2016-07-14",
-      "active": 0
-    },
-    {
-      "first_name": "Filiberto",
-      "last_name": "Durgan",
-      "create_date": "2017-06-03",
-      "active": 0
-    },
-    {
-      "first_name": "Vernie",
-      "last_name": "Wunsch",
-      "create_date": "2012-03-20",
-      "active": 0
-    },
-    {
-      "first_name": "Jada",
-      "last_name": "Smith",
-      "create_date": "2016-12-30",
-      "active": 0
-    },
-    {
-      "first_name": "Alycia",
-      "last_name": "Harris",
-      "create_date": "2010-09-05",
-      "active": 0
-    },
-    {
-      "first_name": "Raymundo",
-      "last_name": "Larson",
-      "create_date": "2017-02-01",
-      "active": 0
-    },
-    {
-      "first_name": "Clarissa",
-      "last_name": "Wisoky",
-      "create_date": "2012-06-22",
-      "active": 0
-    },
-    {
-      "first_name": "Jazmyn",
-      "last_name": "Weissnat",
-      "create_date": "2012-09-19",
-      "active": 0
+      "last_name": "Crist",
+      "create_date": "2017-11-06"
     }
   ]
 }

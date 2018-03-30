@@ -14,8 +14,7 @@ const generateCustomers = () => {
     customers.push({
       first_name,
       last_name,
-      create_date,
-      active
+      create_date
     });
   }
     return { customers };

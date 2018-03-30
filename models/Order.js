@@ -37,7 +37,7 @@ module.exports.addSingleOrder = ({customer_id, order_date, payment_type_id}) => 
 module.exports.patchOrder = (id, { column, value }) => {
   return new Promise((resolve, reject) => {
     // update table set column where id = param id
-    if (column != "payment_type_id") {
+    if (column = "order_date") {
       value = `"${value}"`
     }
     db.run(`UPDATE orders SET "${column}" = ${value}

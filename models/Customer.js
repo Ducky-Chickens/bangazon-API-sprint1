@@ -13,9 +13,14 @@ module.exports.getAllCustomers = () => {
 };
 
 module.exports.getCustsByActivity = (status) => {
-  const statusQuery = (status === "true") ? 1 : 0; 
+  const condition = (status === "true") ? " > 0" : " = 0"; 
   return new Promise( (resolve, reject) => {
-    db.all(`SELECT * FROM customers WHERE active="${statusQuery}"`, (err, customer) => {
+    db.all(
+    `SELECT customers.*, COUNT(orders.customer_id) AS TotalOrders
+    FROM customers
+    LEFT JOIN orders ON orders.customer_id = customers.customer_id
+    GROUP BY customers.customer_id
+    HAVING TotalOrders ${condition}`, (err, customer) => {
       if (err) reject (err);
       resolve(customer);
     });

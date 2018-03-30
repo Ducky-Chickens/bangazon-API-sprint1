@@ -24,13 +24,14 @@ npm run build-tables
 
 // Run a local server to access the data in browser
 
-nodemon app.js
+node app.js
 ```
 
 
 # Helper Applications <a name="helpers"/>
 -----
 
+- [NodeJS](https://nodejs.org/en/) to spin up the server
 - [DB Browser for SQLite](https://sqlitebrowser.org/) to work directly with database without command line
 - [Postman](https://www.getpostman.com/) to use PUT/POST/DELETE http methods
 
@@ -61,24 +62,29 @@ _Customers_
   - Running a PATCH requires that you submit the desired column and value to be edited.
   - Example: 
   ```
-  { "column": "order_date", 
-  "value": "2003/3/20" }
+  { "column": "order_date", "value": "2003-3-20" }
   ```
 
 - _PUT_: replace an entire order object by sending all an orders properties starting with the order_id of the order to be replaced to http://localhost:8080/api/orders:
+  - Example:
   ```
-  { "order_id": [orderId#], "customer_id": [customerId#], "order_date": "[YYYY/MM/DD]", "payment_type_id": [payTypeId#] }
+  { "order_id": 1, "customer_id": 2, "order_date": "2020-3-20", "payment_type_id": null }
   ```
 
 - _DELETE_: delete an order by running a DELETE call to http://localhost:8080/api/orders and sending:
+  - Example:
   ```
-  { "order_id": [orderId#] }
+  { "order_id": 1 }
   ```
 
 - _POST_: submit a new order by running a POST call to http://localhost:8080/api/orders
 
   - You must send a ORDER_DATE, followed by PAYMENT_TYPE_ID to POST a new order.
-  - Example: { "customer_id": 2, "order_date": "2020/20/20", "payment_type_id": 666 }
+  - Example: 
+  ```
+  { "customer_id": 2, "order_date": "2020/20/20", "payment_type_id": null }
+  ```
+  - Note: Unless an order is already paid, you must pass NULL without quotes into "payment_type_id"
 
 
 # Payment-Types

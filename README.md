@@ -20,7 +20,7 @@ npm i
 
 // Then build local SQL database and populate
 
-npm build tables
+npm run build-tables
 
 // Run a local server to access the data in browser
 

@@ -1,8 +1,8 @@
 'use strict';
 
-const { getCustomer, addCustomer, putCustomerObj, patchCustomerObj } = require('../models/Customer');
 const getCustomersByQuery = require('../models/Customer');
 
+// GET customers, if dev sends in query including active, it will send to appropriate function for filtering
 module.exports.getCustomers = ({query: {active}}, res, next) => {
   const filter = active ? "getCustsByActivity" : "getAllCustomers";
   getCustomersByQuery[filter](active)
@@ -12,17 +12,18 @@ module.exports.getCustomers = ({query: {active}}, res, next) => {
   .catch(err => next(err));
 }
 
-
+// GET one customer by id
 module.exports.getOneCustomer = ({params: {custID}}, res, next) => {
-  getCustomer(`${custID}`)
+  getCustomersByQuery.getCustomer(`${custID}`)
   .then(customer => {
     res.status(200).json(customer);
   })
   .catch(err => next(err));
 }
 
+// POST new customer
 module.exports.postNewCustomer = (req, res, next) => {
-  addCustomer(req.body)
+  getCustomersByQuery.addCustomer(req.body)
   .then(customer => {
     res.status(200).json(customer)
   })
@@ -31,9 +32,9 @@ module.exports.postNewCustomer = (req, res, next) => {
   })
 }
 
-
+// PUT to update first name/last name/join date 
 module.exports.putCustomerData = (req, res, next) => {
-  putCustomerObj(req.body)
+  getCustomersByQuery.putCustomerObj(req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);
@@ -45,8 +46,9 @@ module.exports.putCustomerData = (req, res, next) => {
   })
 }
 
+// PATCH to udpate one column of customer by customer ID 
 module.exports.patchCustomerData = (req, res, next) => {
-  patchCustomerObj(req.params.custID, req.body)
+  getCustomersByQuery.patchCustomerObj(req.params.custID, req.body)
   .then(data => {
     if(data){
       res.status(200).json(data);

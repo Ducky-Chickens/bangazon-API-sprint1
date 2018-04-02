@@ -16,6 +16,7 @@ module.exports.buildCustomerTable = () => {
       active INTEGER)`
     );
 
+    // populating customer table using JSON file with faker data
     customers.forEach(({ first_name, last_name, create_date, active}) => {
       db.run(`INSERT INTO customers
               VALUES (null, "${first_name}", "${last_name}", "${create_date}", ${active})`, (err) => {
